@@ -25,20 +25,19 @@ plugin.addAdminNavigation = function(header, callback) {
 	callback(null, header);
 };
 
-plugin.buildComposer = function(data, callback) {
-    console.log("Composer built.");
-    console.dir(data);
+plugin.onTopicCreate = function(data, callback) {
+    // data.topic, this is the topic that will be saved to the database
+    // data.data, this is the data that is submitted from the client side
+    // Now all you have to do is validate `data.myCustomField` and set it in data.topic.
 
+    if (isValid(data.data.age))) {
+        data.topic.age = data.data.age;
+    }
     callback(null, data);
-}
-
-plugin.newTopic = function(data) {
-    console.log("New topic.");
-    console.dir(data);
-}
+};
 
 function renderAdmin(req, res, next) {
-	res.render('admin/custom-topics');
+	res.render('admin/custom-topics', {});
 }
 
 module.exports = plugin;

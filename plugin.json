@@ -7,8 +7,7 @@
 	"hooks": [
 		{ "hook": "static:app.load", "method": "init" },
 		{ "hook": "filter:admin.header.build", "method": "addAdminNavigation" },
-		{ "hook": "filter:composer.build", "method": "buildComposer" },
-		{ "hook": "action:composer.topic.new", "method": "newTopic" }
+		{ "hook": "filter:topics.create", "method": "onTopicCreate" }
 	],
 	"staticDirs": {
 		"static": "./static"
