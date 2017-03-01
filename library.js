@@ -25,12 +25,18 @@ plugin.addAdminNavigation = function(header, callback) {
 	callback(null, header);
 };
 
-plugin.build = function(data, callback) {
+plugin.buildComposer = function(data, callback) {
+    console.dir(data);
+
+    callback(null, data);
+}
+
+plugin.newTopic = function(data) {
     console.dir(data);
 }
 
 function renderAdmin(req, res, next) {
-	res.render('admin/custom-topics', {fields: customFields});
+	res.render('admin/custom-topics');
 }
 
 module.exports = plugin;
