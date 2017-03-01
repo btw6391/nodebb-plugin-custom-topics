@@ -1,0 +1,29 @@
+{
+  "name": "nodebb-plugin-custom-topics",
+  "version": "1.0.1",
+  "description": "Adds custom forms to composer when posting new topics",
+  "main": "library.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/btw6391/node-plugin-custom-topics.git"
+  },
+  "keywords": [
+    "NodeBB",
+    "plugin",
+    "custom",
+    "registration",
+    "field"
+  ],
+  "author": "btw6391 <btw6391@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/btw6391/node-plugin-custom-topics/issues"
+  },
+  "homepage": "https://github.com/btw6391/node-plugin-custom-topics#readme",
+  "nbbpm": {
+    "compatibility": "^1.4.0"
+  }
+}
