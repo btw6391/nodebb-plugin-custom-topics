@@ -26,12 +26,14 @@ plugin.addAdminNavigation = function(header, callback) {
 };
 
 plugin.buildComposer = function(data, callback) {
+    console.log("Composer built.");
     console.dir(data);
 
     callback(null, data);
 }
 
 plugin.newTopic = function(data) {
+    console.log("New topic.");
     console.dir(data);
 }
 
