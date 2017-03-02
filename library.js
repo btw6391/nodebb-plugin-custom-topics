@@ -33,7 +33,7 @@ plugin.onTopicCreate = function(data, callback) {
     // Now all you have to do is validate `data.myCustomField` and set it in data.topic.
 
     if (data.data.age) {
-        data.data.content += '<b>Age: </b>' + data.data.age + '</br>';
+        data.data.content = '<b>Age: </b>' + data.data.age + '</br>';
     }
 
     console.dir(data);
@@ -48,9 +48,9 @@ plugin.onTopicPost = function(data, callback) {
     // data.data, this is the data that is submitted from the client side
     // Now all you have to do is validate `data.myCustomField` and set it in data.topic.
 
-    if (data.data.age) {
-        data.data.content += '<b>Age: </b>' + data.data.age + '</br>';
-    }
+    // if (data.data.age) {
+    //     data.data.content += '<b>Age: </b>' + data.data.age + '</br>';
+    // }
 
     console.dir(data);
 
