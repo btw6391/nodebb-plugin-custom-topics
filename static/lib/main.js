@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 /*global utils, app*/
 
 $(window).on('action:composer.submit', function(ev, data) {
@@ -6,12 +6,36 @@ $(window).on('action:composer.submit', function(ev, data) {
     // data.action can be `topics.post`, `posts.reply` or `posts.edit`
     // data.composerData is the object that will be submitted to the server.
 
-    console.log("Composer submit.");
+    console.log('#Composer submit.');
 
     // lets add our new field into the data to be submitted for new topics
     if (data.action === 'topics.post') {
-        data.composerData.age = data.composerEl.find('#age').val();
-        console.dir(data.composerData);
-        console.log("Topic posted.");
-    }
+        // data.composerData.age = data.composerEl.find('#age').val();
+
+        // var category = data.composerEl.find('#cancer-type').val();
+		// var title = data.composerEl.find('#case-title').val();
+
+		var age = data.composerEl.find('#age').val();
+		var sex = data.composerEl.find('#sex').val();
+		var ecog = data.composerEl.find('#ecog-ps').val();
+		var abnormalFunc = data.composerEl.find('#abnormal-function').val();
+		var abnormalLab = data.composerEl.find('#abnormal-labs').val();
+		var addInfo = data.composerEl.find('#additional-info').val();
+		var mutation = data.composerEl.find('#mutation-status').val();
+
+		var checkboxes = data.composerEl.find('.prior-lines');
+		var priorLines = [];
+		
+		for (var i=0; i<checkboxes.length; i++) {
+		    if (checkboxes[i].checked) {
+		        priorLines.push(checkboxes[i].val());
+		    }
+		}
+
+		var priorInterv = data.composerEl.find('#prior-intervention').val();
+		var progression = data.composerEl.find('#progression-history').val();
+		var questions = data.composerEl.find('#questions').val();
+
+		data.composerData.form = '<b>Age: </b>' + age + '<br><b>Sex: </b>' + sex + '<br><b>ECOG PS: </b>' + ecog + '<br><b>Abnormal Organ Function: </b>' + abnormalFunc + '<br><b>Abnormal Labs: </b>' + abnormalLab + '<br><b>Additional Patient/Tumor Information: </b>' + addInfo + '<br><b>Mutation Status: </b>' + mutation + '<br><b>Prior Lines of Therapy: </b>' + priorLines + '<br><b>Prior Intervention(s): </b>' + priorInterv + '<br><b>Progression History: </b>' + progression + '<br><b>Question/Inquiry: </b>' + questions + '<br>';
+	}
 });
