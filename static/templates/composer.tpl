@@ -56,6 +56,7 @@
 
 		</div>
 
+		<!-- IF isTopicOrMain -->
 		<!-- IF !isEditing -->
 		<div class="row">
 	   		<div class="col-md-12">
@@ -171,6 +172,7 @@
 			</div>
 		</div>
 		<!-- ENDIF !isEditing -->
+		<!-- ENDIF isTopicOrMain -->
 
 		<div class="row write-preview-container">
 			<div class="write-container">
