@@ -92,10 +92,117 @@
 			</div>
 		</div>
 
-		<div class="row">
-			<label for="age">Age</label>
-			<input class="form-control" type="text" id="age" placeholder="Patient's Age" value="" />
-		</div>
+		<fieldset>
+			<legend>Patient Characteristics</legend>
+			<div class="row">
+		   		<div class="col-md-12">
+				   	<div class="row">
+				   		<div class="col-md-6">
+							<div>
+								<label for="age">Age</label>  
+							  	<div>
+							  		<input type="text" id="age" class="form-control" placeholder="Patient's Age" />
+							  	</div>
+							</div>
+						</div>
+				   		<div class="col-md-6">
+							<div>
+								<label for="sex">Sex</label>
+							  	<div>
+									<select id="sex" name="sex" required="required">
+								  		<option value="0">Select patient's sex</option>
+								  		<option value="1">Male</option>
+								  		<option value="2">Female</option>
+									</select>
+							  	</div>
+							</div>
+					   </div>
+					</div>
+					<div>
+					  	<label for="ecog-ps">ECOG PS</label>
+					  	<div>
+							<select id="ecog-ps" name="ecog-ps" required="required">
+						  		<option value="0">0</option>
+						  		<option value="1">1</option>
+						  		<option value="2">2</option>
+						  		<option value="3">3</option>
+						  		<option value="4">4</option>
+							</select>
+					  	</div>
+					</div>
+					<div>
+					  	<label for="abnormal-function">Abnormal Organ Function</label>  
+					  	<div>
+					  		<input type="text" id="abnormal-function" name="abnormal-function" class="form-control" placeholder="Describe the function" />
+					  	</div>
+					</div>
+
+					<div>
+					  	<label for="abnormal-labs">Abnormal Labs</label>  
+					  	<div>
+					  		<input type="text" id="abnormal-labs" name="abnormal-labs" class="form-control" placeholder="Describe labs" />
+					  	</div>
+					</div>
+
+					<div>
+					  	<label for="additional-info">Additional Patient/Tumor Information</label>  
+					  	<div>
+					  		<input type="text" id="additional-info" name="additional-info" class="form-control" placeholder="Describe additional info" />
+					  	</div>
+					</div>
+					
+					<div>
+						<label for="mutation-status">Mutation Status</label>  
+						<div>
+							<textarea id="mutation-status"" name="mutation-status"" placeholder="Describe mutation status"></textarea>
+						</div>
+					</div>
+					<div>
+					  	<label for="prior-lines">Prior Lines of Therapy</label>  
+					  	<div>
+							<label class="checkbox-inline" for="prior-lines">
+						  		<input class="prior-lines" id="prior-lines-0" value="0" type="checkbox">
+						  		0
+							</label>
+							<label class="checkbox-inline" for="prior-lines">
+						  		<input class="prior-lines" id="prior-lines-1" value="1" type="checkbox">
+						  		1
+							</label>
+							<label class="checkbox-inline" for="prior-lines">
+							  	<input class="prior-lines" id="prior-lines-2" value="2" type="checkbox">
+							  	2
+							</label>
+							<label class="checkbox-inline" for="prior-lines">
+							  	<input class="prior-lines" id="prior-lines-3" value="3" type="checkbox">
+							  	3
+							</label>
+							<label class="checkbox-inline" for="prior-lines">
+							  	<input class="prior-lines" id="prior-lines-4" value=">3" type="checkbox">
+							  	&gt;3
+							</label>
+					 	</div>
+					</div>
+					<div>
+					  	<label for="prior-intervention">Prior Intervention(s)</label>
+					  	<div>
+					   		<textarea class="form-control" id="prior-intervention" name="prior-intervention" placeholder="Describe progression after each line of therapy and any other issues of concern"></textarea> 
+					  	</div>
+					</div>
+					<div>
+					  	<label for="progression-history">Progression History</label>  
+					  	<div>
+							<textarea class="form-control" id="progression-history" name="progression-history" placeholder="Ex. chemo/targeted therapy, surgery, radiation"></textarea>
+					  	</div>
+					</div>
+					<div>
+						<label for="questions">Question/Inquiry</label>  
+						<div>
+							<textarea class="form-control" id="questions" name="questions" placeholder="Ask any questions here"></textarea>
+						</div>
+					</div>
+				</div>
+			</div>				
+		</fieldset>
 
 		<div class="row write-preview-container">
 			<div class="col-md-6 col-sm-12 write-container">
