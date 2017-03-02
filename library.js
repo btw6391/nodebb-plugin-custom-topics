@@ -42,7 +42,7 @@ plugin.onTopicCreate = function(data, callback) {
 };
 
 plugin.newComposerTopic = function(data) {
-    console.log("New Topic Category: " + data.cid);
+    console.log("New Topic Category: " + data);
 }
 
 function renderAdmin(req, res, next) {

@@ -23,6 +23,17 @@ $(window).on('action:composer.submit', function(ev, data) {
 		var progression = data.composerEl.find('#progression-history').val();
 		var questions = data.composerEl.find('#questions').val();
 
-		data.composerData.form = '<b>Age: </b>' + age + '<br><b>Sex: </b>' + sex + '<br><b>ECOG PS: </b>' + ecog + '<br><b>Abnormal Organ Function: </b>' + abnormalFunc + '<br><b>Abnormal Labs: </b>' + abnormalLab + '<br><b>Additional Patient/Tumor Information: </b>' + addInfo + '<br><b>Mutation Status: </b>' + mutation + '<br><b>Prior Lines of Therapy: </b>' + priorLines + '<br><b>Prior Intervention(s): </b>' + priorInterv + '<br><b>Progression History: </b>' + progression + '<br><b>Question/Inquiry: </b>' + questions + '<br>';
+		data.composerData.form = '**Patient Characteristics**<br>' +
+								 '<br>**Age:** ' + age + 
+								 '<br>**Sex:** ' + sex + 
+								 '<br>**ECOG PS:** ' + ecog + 
+								 '<br>**Abnormal Organ Function:** ' + abnormalFunc + 
+								 '<br>**Abnormal Labs:** ' + abnormalLab + 
+								 '<br>**Additional Patient/Tumor Information:** ' + addInfo + 
+								 '<br>**Mutation Status:** ' + mutation + 
+								 '<br>**Prior Lines of Therapy:** ' + priorLines + 
+								 '<br>**Prior Intervention(s):** ' + priorInterv + 
+								 '<br>**Progression History:** ' + progression + 
+								 '<br>**Question/Inquiry:** ' + questions;
 	}
 });
