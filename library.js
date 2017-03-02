@@ -33,7 +33,7 @@ plugin.onTopicCreate = function(data, callback) {
     // Now all you have to do is validate `data.myCustomField` and set it in data.topic.
 
     if (data.data.age) {
-        data.topic.age = data.data.age;
+        data.data.content += '<b>Age: </b>' + data.data.age + '</br>';
     }
 
     console.dir(data);
