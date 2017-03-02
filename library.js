@@ -26,6 +26,8 @@ plugin.addAdminNavigation = function(header, callback) {
 };
 
 plugin.onTopicCreate = function(data, callback) {
+    console.log("Topic created!");
+
     // data.topic, this is the topic that will be saved to the database
     // data.data, this is the data that is submitted from the client side
     // Now all you have to do is validate `data.myCustomField` and set it in data.topic.
@@ -33,6 +35,9 @@ plugin.onTopicCreate = function(data, callback) {
     if (isValid(data.data.age)) {
         data.topic.age = data.data.age;
     }
+
+    console.dir(data);
+
     callback(null, data);
 };
 

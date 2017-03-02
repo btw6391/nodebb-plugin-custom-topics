@@ -8,6 +8,7 @@ $(window).on('action:composer.submit', function(ev, data) {
 
     // lets add our new field into the data to be submitted for new topics
     if (data.action === 'topics.post') {
-        data.composerData.age = data.composerEl.find('age').val();
+        data.composerData.age = data.composerEl.getElementById('age').value;
+        console.log(data.composerData.age);
     }
 });
