@@ -32,7 +32,7 @@ plugin.onTopicCreate = function(data, callback) {
     // data.data, this is the data that is submitted from the client side
     // Now all you have to do is validate `data.myCustomField` and set it in data.topic.
 
-    if (isValid(data.data.age)) {
+    if (data.data.age) {
         data.topic.age = data.data.age;
     }
 
