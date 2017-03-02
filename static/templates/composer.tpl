@@ -108,34 +108,28 @@
 			</div>
 		</div>
 
-		<fieldset>
-			<legend>Patient Characteristics</legend>
-			<div class="row">
-		   		<div class="col-md-12">
-				   	<div class="row">
-				   		<div class="col-md-6">
-							<div>
-								<label for="age">Age</label>  
-							  	<div>
-							  		<input type="text" id="age" class="form-control" placeholder="Patient's Age" />
-							  	</div>
-							</div>
-						</div>
-				   		<div class="col-md-6">
-							<div>
-								<label for="sex">Sex</label>
-							  	<div>
-									<select id="sex" name="sex" required="required">
-								  		<option value="0">Select patient's sex</option>
-								  		<option value="1">Male</option>
-								  		<option value="2">Female</option>
-									</select>
-							  	</div>
-							</div>
-					   </div>
+		<!-- IF isTopicOrMain -->
+		<div class="row">
+	   		<div class="col-md-12">
+			   	<div class="row">
+			   		<div class="col-md-4">
+						<label for="age">Age</label>  
+					  	<div>
+					  		<input type="text" id="age" class="form-control" placeholder="Patient's Age" />
+					  	</div>
 					</div>
-					<div>
-					  	<label for="ecog-ps">ECOG PS</label>
+			   		<div class="col-md-4">
+						<label for="sex">Sex</label>
+					  	<div>
+							<select id="sex" name="sex" required="required">
+						  		<option value="">Select patient's sex</option>
+						  		<option value="Male">Male</option>
+						  		<option value="Female">Female</option>
+							</select>
+					  	</div>
+				   	</div>
+				   	<div class="col-md-4">
+						<label for="ecog-ps">ECOG PS</label>
 					  	<div>
 							<select id="ecog-ps" name="ecog-ps" required="required">
 						  		<option value="0">0</option>
@@ -145,35 +139,41 @@
 						  		<option value="4">4</option>
 							</select>
 					  	</div>
-					</div>
-					<div>
+				   	</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-md-6">
 					  	<label for="abnormal-function">Abnormal Organ Function</label>  
 					  	<div>
 					  		<input type="text" id="abnormal-function" name="abnormal-function" class="form-control" placeholder="Describe the function" />
 					  	</div>
 					</div>
-
-					<div>
+					<div class="col-md-6">
 					  	<label for="abnormal-labs">Abnormal Labs</label>  
 					  	<div>
 					  		<input type="text" id="abnormal-labs" name="abnormal-labs" class="form-control" placeholder="Describe labs" />
 					  	</div>
 					</div>
+				</div>
 
-					<div>
+				<div class="row">
+					<div class="col-md-6">
 					  	<label for="additional-info">Additional Patient/Tumor Information</label>  
 					  	<div>
 					  		<input type="text" id="additional-info" name="additional-info" class="form-control" placeholder="Describe additional info" />
 					  	</div>
 					</div>
-					
-					<div>
+					<div class="col-md-6">
 						<label for="mutation-status">Mutation Status</label>  
 						<div>
-							<input id="mutation-status"" name="mutation-status"" placeholder="Describe mutation status" />
+							<input type="text" id="mutation-status"" name="mutation-status"" class="form-control" placeholder="Describe mutation status" />
 						</div>
 					</div>
-					<div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-6">
 					  	<label for="prior-lines">Prior Lines of Therapy</label>  
 					  	<div>
 							<label class="checkbox-inline" for="prior-lines">
@@ -198,27 +198,31 @@
 							</label>
 					 	</div>
 					</div>
-					<div>
+					<div class="col-md-6">
 					  	<label for="prior-intervention">Prior Intervention(s)</label>
 					  	<div>
 					   		<input class="form-control" id="prior-intervention" name="prior-intervention" placeholder="Describe progression after each line of therapy and any other issues of concern" /> 
 					  	</div>
 					</div>
-					<div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-6">
 					  	<label for="progression-history">Progression History</label>  
 					  	<div>
 							<input class="form-control" id="progression-history" name="progression-history" placeholder="Ex. chemo/targeted therapy, surgery, radiation" />
 					  	</div>
 					</div>
-					<div>
+					<div class="col-md-6">
 						<label for="questions">Question/Inquiry</label>  
 						<div>
 							<input class="form-control" id="questions" name="questions" placeholder="Ask any questions here" />
 						</div>
 					</div>
 				</div>
-			</div>				
-		</fieldset>
+			</div>
+		</div>
+		<!-- ENDIF isTopicOrMain -->
 
 		<div class="row write-preview-container">
 			<div class="write-container">

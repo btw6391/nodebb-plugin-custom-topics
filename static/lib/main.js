@@ -23,7 +23,7 @@ $(window).on('action:composer.submit', function(ev, data) {
 		var addInfo = data.composerEl.find('#additional-info').val();
 		var mutation = data.composerEl.find('#mutation-status').val();
 
-		var priorLines = data.composerEl.find('#prior-lines');
+		var priorLines = data.composerEl.find('#prior-lines').val();
 		// var priorLines = [];
 		
 		// for (var i=0; i<checkboxes.length; i++) {
