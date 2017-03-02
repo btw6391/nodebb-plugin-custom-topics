@@ -5,57 +5,70 @@
 			<div class="pull-left">
 				<button class="btn btn-sm btn-primary composer-discard" data-action="discard" tabindex="-1"><i class="fa fa-times"></i></button>
 			</div>
+			
 			<!-- IF isTopic -->
 			<div class="category-name-container">
 				<span class="category-name"></span> <i class="fa fa-sort"></i>
 			</div>
 			<!-- ENDIF isTopic -->
+			
 			<div class="pull-right">
 				<button class="btn btn-sm btn-primary composer-submit" data-action="post" tabindex="-1"><i class="fa fa-chevron-right"></i></button>
 			</div>
+			
 			<!-- IF !isTopicOrMain -->
 			<h4 class="title">[[topic:composer.replying_to, "{title}"]]</h4>
 			<!-- ENDIF !isTopicOrMain -->
+	
 		</nav>
 		<div class="row title-container">
+			
 			<!-- IF showHandleInput -->
 			<div class="col-sm-3 col-md-12">
 				<input class="handle form-control" type="text" tabindex="1" placeholder="[[topic:composer.handle_placeholder]]" value="{handle}" />
 			</div>
 			<div class="<!-- IF isTopic -->col-lg-9<!-- ELSE -->col-lg-12<!-- ENDIF isTopic --> col-md-12">
+				
 				<!-- IF isTopicOrMain -->
-				<input class="title form-control" type="text" tabindex="1" placeholder="[[topic:composer.title_placeholder]]" value="{title}"/>
+				<input class="title form-control" type="text" tabindex="1" placeholder="Case Title" value="{title}"/>
 				<!-- ELSE -->
 				<span class="title form-control">[[topic:composer.replying_to, "{title}"]]</span>
 				<!-- ENDIF isTopicOrMain -->
+
+
 			</div>
+			
 			<!-- ELSE -->
 			<div class="<!-- IF isTopic -->col-lg-9<!-- ELSE -->col-lg-12<!-- ENDIF isTopic --> col-md-12">
 				<!-- IF isTopicOrMain -->
-				<input class="title form-control" type="text" tabindex="1" placeholder="[[topic:composer.title_placeholder]]" value="{title}"/>
+				<input class="title form-control" type="text" tabindex="1" placeholder="Case Title" value="{title}"/>
 				<!-- ELSE -->
 				<span class="title form-control">[[topic:composer.replying_to, "{title}"]]</span>
 				<!-- ENDIF isTopicOrMain -->
 			</div>
 			<!-- ENDIF showHandleInput -->
+
 			<!-- IF isTopic -->
 			<div class="category-list-container col-lg-3 col-md-12 hidden-sm hidden-xs">
 				<select tabindex="3" class="form-control category-list"></select>
 			</div>
 			<!-- ENDIF isTopic -->
+
 		</div>
 
 		<div class="category-tag-row">
 			<div class="btn-toolbar formatting-bar">
 				<ul class="formatting-group">
 					<!-- BEGIN formatting -->
-						<!-- IF formatting.spacer -->
-						<li class="spacer"></li>
-						<!-- ELSE -->
-						<!-- IF !formatting.mobile -->
-						<li tabindex="-1" data-format="{formatting.name}" title="{formatting.title}"><i class="{formatting.className}"></i></li>
-						<!-- ENDIF !formatting.mobile -->
-						<!-- ENDIF formatting.spacer -->
+						
+					<!-- IF formatting.spacer -->
+					<li class="spacer"></li>
+					<!-- ELSE -->
+					<!-- IF !formatting.mobile -->
+					<li tabindex="-1" data-format="{formatting.name}" title="{formatting.title}"><i class="{formatting.className}"></i></li>
+					<!-- ENDIF !formatting.mobile -->
+					<!-- ENDIF formatting.spacer -->
+
 					<!-- END formatting -->
 
 					<!--[if gte IE 9]><!-->
@@ -101,14 +114,14 @@
 				</ul>
 
 				<div class="btn-group pull-right action-bar hidden-sm hidden-xs">
-					<button class="btn btn-default composer-discard" data-action="discard" tabindex="-1"><i class="fa fa-times"></i> [[topic:composer.discard]]</button>
-
 					<button class="btn btn-primary composer-submit" data-action="post" tabindex="6"><i class="fa fa-check"></i> [[topic:composer.submit]]</button>
+
+					<button class="btn btn-default composer-discard" data-action="discard" tabindex="-1"><i class="fa fa-times"></i> [[topic:composer.discard]]</button>
 				</div>
 			</div>
 		</div>
 
-		<!-- IF isTopicOrMain -->
+		<!-- IF !isEditing -->
 		<div class="row">
 	   		<div class="col-md-12">
 			   	<div class="row">
@@ -222,7 +235,7 @@
 				</div>
 			</div>
 		</div>
-		<!-- ENDIF isTopicOrMain -->
+		<!-- ENDIF !isEditing -->
 
 		<div class="row write-preview-container">
 			<div class="write-container">

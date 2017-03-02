@@ -41,6 +41,10 @@ plugin.onTopicCreate = function(data, callback) {
     callback(null, data);
 };
 
+plugin.newComposerTopic = function(data) {
+    console.log("New Topic Category: " + data.cid);
+}
+
 function renderAdmin(req, res, next) {
 	res.render('admin/custom-topics', {});
 }
