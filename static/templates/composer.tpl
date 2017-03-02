@@ -170,7 +170,7 @@
 					<div>
 						<label for="mutation-status">Mutation Status</label>  
 						<div>
-							<textarea id="mutation-status"" name="mutation-status"" placeholder="Describe mutation status"></textarea>
+							<input id="mutation-status"" name="mutation-status"" placeholder="Describe mutation status" />
 						</div>
 					</div>
 					<div>
@@ -201,19 +201,19 @@
 					<div>
 					  	<label for="prior-intervention">Prior Intervention(s)</label>
 					  	<div>
-					   		<textarea class="form-control" id="prior-intervention" name="prior-intervention" placeholder="Describe progression after each line of therapy and any other issues of concern"></textarea> 
+					   		<input class="form-control" id="prior-intervention" name="prior-intervention" placeholder="Describe progression after each line of therapy and any other issues of concern" /> 
 					  	</div>
 					</div>
 					<div>
 					  	<label for="progression-history">Progression History</label>  
 					  	<div>
-							<textarea class="form-control" id="progression-history" name="progression-history" placeholder="Ex. chemo/targeted therapy, surgery, radiation"></textarea>
+							<input class="form-control" id="progression-history" name="progression-history" placeholder="Ex. chemo/targeted therapy, surgery, radiation" />
 					  	</div>
 					</div>
 					<div>
 						<label for="questions">Question/Inquiry</label>  
 						<div>
-							<textarea class="form-control" id="questions" name="questions" placeholder="Ask any questions here"></textarea>
+							<input class="form-control" id="questions" name="questions" placeholder="Ask any questions here" />
 						</div>
 					</div>
 				</div>

@@ -23,14 +23,14 @@ $(window).on('action:composer.submit', function(ev, data) {
 		var addInfo = data.composerEl.find('#additional-info').val();
 		var mutation = data.composerEl.find('#mutation-status').val();
 
-		var checkboxes = data.composerEl.find('.prior-lines');
-		var priorLines = [];
+		var priorLines = data.composerEl.find('#prior-lines');
+		// var priorLines = [];
 		
-		for (var i=0; i<checkboxes.length; i++) {
-		    if (checkboxes[i].checked) {
-		        priorLines.push(checkboxes[i].val());
-		    }
-		}
+		// for (var i=0; i<checkboxes.length; i++) {
+		//     if (checkboxes[i].checked) {
+		//         priorLines.push(checkboxes[i].val());
+		//     }
+		// }
 
 		var priorInterv = data.composerEl.find('#prior-intervention').val();
 		var progression = data.composerEl.find('#progression-history').val();
