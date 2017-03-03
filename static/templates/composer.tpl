@@ -58,7 +58,7 @@
 
 		<!-- IF isTopicOrMain -->
 		<!-- IF !isEditing -->
-		<form class="ui form">
+		<form class="ui big form">
 	   		<h4 class="ui dividing header">Patient Information</h4>
 		   	<div class="fields">
 		   		<div class="three wide field">
@@ -150,7 +150,7 @@
 					<input type="text" id="questions" name="questions" placeholder="Ask any questions here">
 				</div>
 			</div>
-		</div>
+		</form>
 		<!-- ENDIF !isEditing -->
 		<!-- ENDIF isTopicOrMain -->
 
@@ -168,7 +168,7 @@
 				</div>
 				<div class="preview well"></div>
 			</div>
-		</form>
+		</div>
 
 		<div class="category-tag-row">
 			<div class="btn-toolbar formatting-bar">
