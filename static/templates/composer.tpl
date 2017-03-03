@@ -1,4 +1,4 @@
-<div component="composer" class="composer<!-- IF resizable --> resizable<!-- ENDIF resizable --><!-- IF !isTopicOrMain --> reply<!-- ENDIF !isTopicOrMain -->">
+<div component="composer" class="composer<!-- IF resizable --> resizable<!-- ENDIF resizable --><!-- IF !isTopicOrMain --> reply<!-- ELSE --> maximized<!-- ENDIF !isTopicOrMain --> ">
 
 	<div class="composer-container">
 		<nav class="navbar navbar-fixed-top mobile-navbar visible-xs visible-sm">
@@ -107,24 +107,24 @@
 				</div>
 			</div>
 
-			<div class="fields">
-				<div class="four wide field">
-				  	<label>Prior Lines of Therapy</label>
+			<div class="two fields">
+				<div class="field">
+				<label>Prior Lines of Therapy</label>
 			  		<div class="ui checkbox">
 					  	<input id="prior-lines-0" value="0" type="checkbox">
-						<label>0</label>
+						<label>0&nbsp;&nbsp;</label>
 					</div>
 					<div class="ui checkbox">
 					  	<input id="prior-lines-1" value="1" type="checkbox">
-						<label>1</label>
+						<label>1&nbsp;&nbsp;</label>
 					</div>
 					<div class="ui checkbox">
 						<input id="prior-lines-2" value="2" type="checkbox">
-						<label>2</label>
+						<label>2&nbsp;&nbsp;</label>
 					</div>
 					<div class="ui checkbox">
 						<input id="prior-lines-3" value="3" type="checkbox">
-						<label>3</label>
+						<label>3&nbsp;&nbsp;</label>
 					</div>
 					<div class="ui checkbox">
 						<input id="prior-lines-4" value=">3" type="checkbox">
@@ -132,7 +132,7 @@
 				 	</div>
 				</div>
 
-				<div class="ten wide field">
+				<div class="field">
 				  	<label>Prior Intervention(s)</label>
 				   	<input type="text" id="prior-intervention" name="prior-intervention" placeholder="Describe progression after each line of therapy and any other issues of concern"> 
 				</div>
