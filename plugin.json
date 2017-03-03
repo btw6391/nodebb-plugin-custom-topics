@@ -7,14 +7,13 @@
 	"hooks": [
 		{ "hook": "static:app.load", "method": "init" },
 		{ "hook": "filter:admin.header.build", "method": "addAdminNavigation" },
-		{ "hook": "filter:topic.create", "method": "onTopicCreate" },
-		{ "hook": "action:composer.topic.new", "method": "newComposerTopic"}
+		{ "hook": "filter:topic.create", "method": "onTopicCreate" }
 	],
 	"staticDirs": {
 		"static": "./static"
 	},
 	"less": [
-		"static/style.less"
+		"static/less/form.less"
 	],
 	"scripts": [
 		"static/lib/main.js"
