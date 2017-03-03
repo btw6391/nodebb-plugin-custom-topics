@@ -58,7 +58,7 @@
 
 		<!-- IF isTopicOrMain -->
 		<!-- IF !isEditing -->
-		<form class="ui form">
+		<form class="ui huge form">
 	   		<h4 class="ui dividing header">Patient Information</h4>
 		   	<div class="fields">
 		   		<div class="three wide field">
