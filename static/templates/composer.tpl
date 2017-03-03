@@ -58,116 +58,96 @@
 
 		<!-- IF isTopicOrMain -->
 		<!-- IF !isEditing -->
-		<div class="row">
-	   		<div class="col-md-12">
-			   	<div class="row">
-			   		<div class="col-md-4">
-						<label for="age">Age</label>  
-					  	<div>
-					  		<input type="text" id="age" class="form-control" placeholder="Patient's Age" />
-					  	</div>
-					</div>
-			   		<div class="col-md-4">
-						<label for="sex">Sex</label>
-					  	<div>
-							<select id="sex" name="sex" required="required">
-						  		<option value="">Select patient's sex</option>
-						  		<option value="Male">Male</option>
-						  		<option value="Female">Female</option>
-							</select>
-					  	</div>
-				   	</div>
-				   	<div class="col-md-4">
-						<label for="ecog-ps">ECOG PS</label>
-					  	<div>
-							<select id="ecog-ps" name="ecog-ps" required="required">
-						  		<option value="0">0</option>
-						  		<option value="1">1</option>
-						  		<option value="2">2</option>
-						  		<option value="3">3</option>
-						  		<option value="4">4</option>
-							</select>
-					  	</div>
-				   	</div>
+		<form class="ui form">
+	   		<h4 class="ui dividing header">Patient Information</h4>
+		   	<div class="fields">
+		   		<div class="three wide field">
+					<label>Age</label>
+				  	<input type="text" id="age" name="age" maxlength="3" placeholder="Patient's Age">
 				</div>
-				
-				<div class="row">
-					<div class="col-md-6">
-					  	<label for="abnormal-function">Abnormal Organ Function</label>  
-					  	<div>
-					  		<input type="text" id="abnormal-function" name="abnormal-function" class="form-control" placeholder="Describe the function" />
-					  	</div>
-					</div>
-					<div class="col-md-6">
-					  	<label for="abnormal-labs">Abnormal Labs</label>  
-					  	<div>
-					  		<input type="text" id="abnormal-labs" name="abnormal-labs" class="form-control" placeholder="Describe labs" />
-					  	</div>
-					</div>
+		   		<div class="three wide field">
+					<label>Sex</label>
+					<select id="sex" name="sex" class="ui fluid search dropdown">
+				  		<option value="">Select patient's sex</option>
+				  		<option value="Male">Male</option>
+				  		<option value="Female">Female</option>
+					</select>
+			   	</div>
+			   	<div class="three wide field">
+					<label>ECOG PS</label>
+					<select id="ecog-ps" name="ecog-ps" class="ui fluid search dropdown">
+				  		<option value="0">0</option>
+				  		<option value="1">1</option>
+				  		<option value="2">2</option>
+				  		<option value="3">3</option>
+				  		<option value="4">4</option>
+					</select>
+			   	</div>
+			</div>
+			
+			<div class="two fields">
+				<div class="field">
+				  	<label>Abnormal Organ Function</label>
+				  	<input type="text" id="abnormal-function" name="abnormal-function" placeholder="Describe the function">
 				</div>
+				<div class="field">
+				  	<label>Abnormal Labs</label>
+				  	<input type="text" id="abnormal-labs" name="abnormal-labs" placeholder="Describe labs">
+				</div>
+			</div>
 
-				<div class="row">
-					<div class="col-md-6">
-					  	<label for="additional-info">Additional Patient/Tumor Information</label>  
-					  	<div>
-					  		<input type="text" id="additional-info" name="additional-info" class="form-control" placeholder="Describe additional info" />
-					  	</div>
-					</div>
-					<div class="col-md-6">
-						<label for="mutation-status">Mutation Status</label>  
-						<div>
-							<input type="text" id="mutation-status"" name="mutation-status"" class="form-control" placeholder="Describe mutation status" />
+			<div class="two fields">
+				<div class="field">
+				  	<label>Additional Patient/Tumor Information</label>  
+				  	<input type="text" id="additional-info" name="additional-info" placeholder="Describe additional info">
+				</div>
+				<div class="field">
+					<label>Mutation Status</label>  
+					<input type="text" id="mutation-status"" name="mutation-status" placeholder="Describe mutation status">
+				</div>
+			</div>
+
+			<div class="fields">
+				<div class="four wide field">
+				  	<label>Prior Lines of Therapy</label>  
+				  	<div class="inline field">
+				  		<div class="ui checkbox">
+						  	<input tabindex="0" class="hidden" id="prior-lines-0" value="0" type="checkbox">
+							<label>0</label>
 						</div>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="col-md-6">
-					  	<label for="prior-lines">Prior Lines of Therapy</label>  
-					  	<div>
-							<label class="checkbox-inline" for="prior-lines">
-						  		<input class="prior-lines" id="prior-lines-0" value="0" type="checkbox">
-						  		0
-							</label>
-							<label class="checkbox-inline" for="prior-lines">
-						  		<input class="prior-lines" id="prior-lines-1" value="1" type="checkbox">
-						  		1
-							</label>
-							<label class="checkbox-inline" for="prior-lines">
-							  	<input class="prior-lines" id="prior-lines-2" value="2" type="checkbox">
-							  	2
-							</label>
-							<label class="checkbox-inline" for="prior-lines">
-							  	<input class="prior-lines" id="prior-lines-3" value="3" type="checkbox">
-							  	3
-							</label>
-							<label class="checkbox-inline" for="prior-lines">
-							  	<input class="prior-lines" id="prior-lines-4" value=">3" type="checkbox">
-							  	&gt;3
-							</label>
-					 	</div>
-					</div>
-					<div class="col-md-6">
-					  	<label for="prior-intervention">Prior Intervention(s)</label>
-					  	<div>
-					   		<input class="form-control" id="prior-intervention" name="prior-intervention" placeholder="Describe progression after each line of therapy and any other issues of concern" /> 
-					  	</div>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="col-md-6">
-					  	<label for="progression-history">Progression History</label>  
-					  	<div>
-							<input class="form-control" id="progression-history" name="progression-history" placeholder="Ex. chemo/targeted therapy, surgery, radiation" />
-					  	</div>
-					</div>
-					<div class="col-md-6">
-						<label for="questions">Question/Inquiry</label>  
-						<div>
-							<input class="form-control" id="questions" name="questions" placeholder="Ask any questions here" />
+						<div class="ui checkbox">
+						  	<input tabindex="0" class="hidden" id="prior-lines-1" value="1" type="checkbox">
+							<label>1</label>
 						</div>
-					</div>
+						<div class="ui checkbox">
+							<input tabindex="0" class="hidden" id="prior-lines-2" value="2" type="checkbox">
+							<label>2</label>
+						</div>
+						<div class="ui checkbox">
+							<input tabindex="0" class="hidden" id="prior-lines-3" value="3" type="checkbox">
+							<label>3</label>
+						</div>
+						<div class="ui checkbox">
+							<input tabindex="0" class="hidden" id="prior-lines-4" value=">3" type="checkbox">
+							<label>&gt;3</label>
+						</div>
+				 	</div>
+				</div>
+
+				<div class="ten wide field">
+				  	<label>Prior Intervention(s)</label>
+				   	<input type="text" id="prior-intervention" name="prior-intervention" placeholder="Describe progression after each line of therapy and any other issues of concern"> 
+				</div>
+			</div>
+
+			<div class="two fields">
+				<div class="field">
+				  	<label for="progression-history">Progression History</label>  
+					<input type="text" id="progression-history" name="progression-history" placeholder="Ex. chemo/targeted therapy, surgery, radiation">
+				</div>
+				<div class="field">
+					<label for="questions">Question/Inquiry</label>  
+					<input type="text" id="questions" name="questions" placeholder="Ask any questions here">
 				</div>
 			</div>
 		</div>
@@ -188,7 +168,7 @@
 				</div>
 				<div class="preview well"></div>
 			</div>
-		</div>
+		</form>
 
 		<div class="category-tag-row">
 			<div class="btn-toolbar formatting-bar">

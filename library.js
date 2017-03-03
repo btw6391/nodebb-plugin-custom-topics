@@ -33,8 +33,7 @@ plugin.onTopicCreate = function(data, callback) {
     // Now all you have to do is validate `data.myCustomField` and set it in data.topic.
 
     if (data.data.form) {
-        data.data.content = data.data.form +
-                            data.data.content;
+        data.data.content = data.data.form + '<br><br>' + data.data.content;
     }
 
     console.dir(data);
