@@ -19,11 +19,27 @@ $(window).on('action:composer.submit', function(ev, data) {
 		var addInfo = data.composerEl.find('#additional-info').val();
 		var mutation = data.composerEl.find('#mutation-status').val();
 		
-		var priorLines = data.composerEl.find('#prior-lines-0').val() ;
-		var priorLines += data.composerEl.find('#prior-lines-1').val();
-		var priorLines += data.composerEl.find('#prior-lines-2').val();
-		var priorLines += data.composerEl.find('#prior-lines-3').val();
-		var priorLines += data.composerEl.find('#prior-lines-3').val();
+		var priorLines = "";
+
+		if($('#prior-lines-0').prop('checked')) {
+			priorLines += data.composerEl.find('#prior-lines-0').val();
+		}
+
+		if($('#prior-lines-1').prop('checked')) {
+			priorLines += data.composerEl.find('#prior-lines-1').val();
+		}
+
+		if($('#prior-lines-2').prop('checked')) {
+			priorLines += data.composerEl.find('#prior-lines-2').val();
+		}
+
+		if($('#prior-lines-3').prop('checked')) {
+			priorLines += data.composerEl.find('#prior-lines-3').val();
+		}
+
+		if($('#prior-lines-4').prop('checked')) {
+			priorLines += data.composerEl.find('#prior-lines-4').val();
+		}
 		
 		var priorInterv = data.composerEl.find('#prior-intervention').val();
 		var progression = data.composerEl.find('#progression-history').val();
