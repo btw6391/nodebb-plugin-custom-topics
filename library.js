@@ -35,7 +35,7 @@ plugin.onTopicCreate = function(data, callback) {
     }
 
     if (data.data.formData) {
-        data.topicData.formData = data.data.formData;
+        data.topic.formData = data.data.formData;
     }
 
     console.dir(data);

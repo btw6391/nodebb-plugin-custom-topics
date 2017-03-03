@@ -157,9 +157,9 @@ define('composer', [
 		return null;
 	};
 
-	// composer.addButton = function(iconClass, onClick, title) {
-	// 	formatting.addButton(iconClass, onClick, title);
-	// };
+	composer.addButton = function(iconClass, onClick, title) {
+		formatting.addButton(iconClass, onClick, title);
+	};
 
 	composer.newTopic = function(data) {
 		push({
@@ -532,9 +532,9 @@ define('composer', [
 		if (uploads.inProgress[post_uuid] && uploads.inProgress[post_uuid].length) {
 			return composerAlert(post_uuid, '[[error:still-uploading]]');
 		}
-		// else if (checkTitle && titleEl.val().length < parseInt(config.minimumTitleLength, 10)) {
-		// 	return composerAlert(post_uuid, '[[error:title-too-short, ' + config.minimumTitleLength + ']]');
-		// }
+		else if (checkTitle && titleEl.val().length < parseInt(config.minimumTitleLength, 10)) {
+			return composerAlert(post_uuid, '[[error:title-too-short, ' + config.minimumTitleLength + ']]');
+		}
 		else if (checkTitle && titleEl.val().length > parseInt(config.maximumTitleLength, 10)) {
 			return composerAlert(post_uuid, '[[error:title-too-long, ' + config.maximumTitleLength + ']]');
 		}
@@ -544,9 +544,9 @@ define('composer', [
 		else if (checkTitle && tags.getTags(post_uuid) && tags.getTags(post_uuid).length < parseInt(config.minimumTagsPerTopic, 10)) {
 			return composerAlert(post_uuid, '[[error:not-enough-tags, ' + config.minimumTagsPerTopic + ']]');
 		}
-		// else if (bodyEl.val().length < parseInt(config.minimumPostLength, 10)) {
-		// 	return composerAlert(post_uuid, '[[error:content-too-short, ' + config.minimumPostLength + ']]');
-		// }
+		else if (bodyEl.val().length < parseInt(config.minimumPostLength, 10)) {
+			return composerAlert(post_uuid, '[[error:content-too-short, ' + config.minimumPostLength + ']]');
+		}
 		else if (bodyEl.val().length > parseInt(config.maximumPostLength, 10)) {
 			return composerAlert(post_uuid, '[[error:content-too-long, ' + config.maximumPostLength + ']]');
 		}
