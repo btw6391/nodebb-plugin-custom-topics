@@ -47,7 +47,21 @@ $(window).on('action:composer.submit', function(ev, data) {
 		var progression = data.composerEl.find('#progression-history').val();
 		var questions = data.composerEl.find('#questions').val();
 
-		data.composerData.form = '**Patient Characteristics**<br>' +
+		data.composerData.formData = {
+			age: age,
+			sex: sex,
+			ecog: ecog,
+			abnormalFunc: abnormalFunc,
+			abnormalLab: abnormalLab,
+			addInfo: addInfo,
+			mutation: mutation,
+			priorLines: priorLines,
+			priorInterv: priorInterv,
+			progression: progression,
+			questions: questions
+		}
+
+		data.composerData.message = '**Patient Characteristics**<br>' +
 								 '<br>**Age:** ' + age + 
 								 '<br>**Sex:** ' + sex + 
 								 '<br>**ECOG PS:** ' + ecog + 

@@ -16,7 +16,8 @@
 		"static/less/form.less"
 	],
 	"scripts": [
-		"static/lib/main.js"
+		"static/lib/main.js",
+		"static/lib/composer.js",
 	],
 	"templates": "static/templates"
 }

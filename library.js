@@ -26,14 +26,16 @@ plugin.addAdminNavigation = function(header, callback) {
 };
 
 plugin.onTopicCreate = function(data, callback) {
-    console.log("Topic created! Current content: " + data.data.content);
-
     // data.topic, this is the topic that will be saved to the database
     // data.data, this is the data that is submitted from the client side
     // Now all you have to do is validate `data.myCustomField` and set it in data.topic.
 
-    if (data.data.form) {
-        data.data.content = data.data.form + '<br><br>' + data.data.content;
+    if (data.data.message) {
+        data.data.content = data.data.message + '<br><br>' + data.data.content;
+    }
+
+    if (data.data.formData) {
+        data.topicData.formData = data.data.formData;
     }
 
     console.dir(data);

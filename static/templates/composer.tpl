@@ -1,4 +1,4 @@
-<div component="composer" class="composer<!-- IF resizable --> resizable<!-- ENDIF resizable --><!-- IF !isTopicOrMain --> reply<!-- ELSE --> maximized<!-- ENDIF !isTopicOrMain --> ">
+<div component="composer" class="composer<!-- IF resizable --> resizable<!-- ENDIF resizable --><!-- IF !isTopicOrMain --> reply<!-- ENDIF !isTopicOrMain -->">
 
 	<div class="composer-container">
 		<nav class="navbar navbar-fixed-top mobile-navbar visible-xs visible-sm">
@@ -19,8 +19,8 @@
 			<!-- IF !isTopicOrMain -->
 			<h4 class="title">[[topic:composer.replying_to, "{title}"]]</h4>
 			<!-- ENDIF !isTopicOrMain -->
-	
 		</nav>
+		
 		<div class="row title-container">
 			
 			<!-- IF showHandleInput -->
@@ -59,7 +59,6 @@
 		<!-- IF isTopicOrMain -->
 		<!-- IF !isEditing -->
 		<form class="ui huge form">
-	   		<h4 class="ui dividing header">Patient Information</h4>
 		   	<div class="fields">
 		   		<div class="three wide field">
 					<label>Age</label>
