@@ -49,21 +49,23 @@
 			<!-- ENDIF showHandleInput -->
 
 			<!-- IF isTopic -->
-<!-- 			<div class="category-list-container col-lg-3 col-md-12 hidden-sm hidden-xs">
+			<!-- IF isGeneral -->
+			<div class="category-list-container col-lg-3 col-md-12 hidden-sm hidden-xs">
 				<select tabindex="3" class="form-control category-list"></select>
-			</div> -->
+			</div>
+			<!-- ENDIF isGeneral -->
 			<!-- ENDIF isTopic -->
 
 		</div>
 
 		<!-- IF isTopicOrMain -->
 		<!-- IF !isEditing -->
-		<!-- IF categoryType == "patientCases" -->
+		<!-- IF isPatientCase -->
 		<form class="ui huge form" style="overflow: scroll;">
 		   	<div class="four fields">
 		   		<div class="field">
 		   			<label>Category</label>
-		   			<div class="category-name-container">
+		   			<div class="category-list-container">
 						<select id="category" name="category" class="category-list ui dropdown"></select>
 					</div>
 		   		</div>
@@ -155,7 +157,7 @@
 				</div>
 			</div>
 		</form>
-		<!-- ENDIF categoryType == "patientCases" -->
+		<!-- ENDIF isPatientCase -->
 		<!-- ENDIF !isEditing -->
 		<!-- ENDIF isTopicOrMain -->
 

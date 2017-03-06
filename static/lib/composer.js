@@ -367,18 +367,24 @@ define('composer', [
 			isEditing = postData ? !!postData.pid : false,
 			isGuestPost = postData ? parseInt(postData.uid, 10) === 0 : false;
 
-		var categoryType;
+		var isPatientCase, isNewTreatment, isGeneral;
 
 		if (postData.cid >= 20 && postData.cid <= 30) {
-			categoryType = "patientCases";
+			isPatientCase = true;
+			isNewTreatment = false;
+			isGeneral = false;
 		}
 
 		else if (postData.cid >= 33 && postData.cid <= 36) {
-			categoryType = "newTreatmentMode";
+			isPatientCase = false;
+			isNewTreatment = true;
+			isGeneral = false;
 		}
 
 		else {
-			categoryType = "general";
+			isPatientCase = false;
+			isNewTreatment = false;
+			isGeneral = true;
 		}
 
 		// see
@@ -402,7 +408,9 @@ define('composer', [
 			handle: postData ? postData.handle || '' : undefined,
 			formatting: composer.formatting,
 			tagWhitelist: ajaxify.data.tagWhitelist,
-			categoryType: categoryType
+			isPatientCase: isPatientCase,
+			isNewTreatment: isNewTreatment,
+			isGeneral: isGeneral
 		};
 
 		if (data.mobile) {
