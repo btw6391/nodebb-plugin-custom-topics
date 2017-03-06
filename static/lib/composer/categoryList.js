@@ -133,14 +133,14 @@ define('composer/categoryList', function() {
 		// 	return;
 		// }
 
-		if (cid >= 19 && cid <= 30) {
-			if (category.cid >= 19 && category.cid <= 30) {
+		if (category.cid >= 19 && category.cid <= 30) {
+			if (cid >= 19 && cid <= 30) {
 				$('<option value="' + category.cid + '" ' + (category.noPrivilege ? 'disabled' : '') + '>' + level + bullet + category.name + '</option>').appendTo(listEl);
 			}
 		}
 
-		else if (cid >= 33 && cid <= 36 || cid == 31) {
-			if (category.cid >= 33 && category.cid <= 36 || category.id == 31) {
+		else if ((category.cid >= 33 && category.cid <= 36) || category.cid == 31) {
+			if ((cid >= 33 && cid <= 36) || cid == 31) {
 				$('<option value="' + category.cid + '" ' + (category.noPrivilege ? 'disabled' : '') + '>' + level + bullet + category.name + '</option>').appendTo(listEl);
 			}
 		}

@@ -651,11 +651,11 @@ define('composer', [
 			isNewTreatment = false,
 			isGeneral = false;
 
-		if (postData.cid >= 20 && postData.cid <= 30) {
+		if (postData.cid >= 19 && postData.cid <= 30) {
 			isPatientCase = true;
 		}
 
-		else if (postData.cid >= 33 && postData.cid <= 36) {
+		else if ((postData.cid >= 33 && postData.cid <= 36) || postData.cid == 31)  {
 			isNewTreatment = true;
 		}
 
