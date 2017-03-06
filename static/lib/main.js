@@ -1,10 +1,10 @@
 'use strict';
 /*global utils, app*/
 
-var lines = [];
+var lines;
 
 $('#prior_lines_value').click(function() {
-    var lines = $('input[type=checkbox]:checked').map(function(_, el) {
+    lines = $('input[type=checkbox]:checked').map(function(_, el) {
         return $(el).val();
     }).get();
 });

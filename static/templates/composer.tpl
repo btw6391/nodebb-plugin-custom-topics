@@ -61,9 +61,9 @@
 		<form class="ui huge form">
 		   	<div class="four fields">
 		   		<div class="field">
-		   			<label>Category></label>
-		   			<div class="category-list-container col-lg-3 col-md-12 hidden-sm hidden-xs">
-						<select tabindex="3" class="form-control category-list"></select>
+		   			<label>Category</label>
+		   			<div class="category-name-container">
+						<select id="category" name="category" class="category-list ui dropdown"></select>
 					</div>
 		   		</div>
 		   		<div class="field">
@@ -112,36 +112,39 @@
 				</div>
 			</div>
 
-			<input  id="ad_Checkbox1" class="ads_Checkbox" type="checkbox" value="1" />
-			<input  id="ad_Checkbox2" class="ads_Checkbox" type="checkbox" value="2" />
-			<input  id="ad_Checkbox3" class="ads_Checkbox" type="checkbox" value="3" />
-			<input  id="ad_Checkbox4" class="ads_Checkbox" type="checkbox" value="4" />
-			
-			<input type="button" id="save_value" name="save_value" value="Save" />
-
 			<div class="two fields">
 				<div class="field">
-				<label>Prior Lines of Therapy</label>
-			  		<div class="ui checkbox">
-					  	<input id="prior-lines-0" value="0" type="checkbox">
-						<label>0</label>
+					<label>Prior Lines of Therapy</label>
+					<div class="field">
+				  		<div class="ui checkbox">
+						  	<input id="prior-lines-0" value="0" type="checkbox" tabindex="0" class="hidden">
+							<label>0</label>
+						</div>
 					</div>
-					<div class="ui checkbox">
-					  	<input id="prior-lines-1" value="1" type="checkbox">
-						<label>1</label>
+					<div class="field">
+						<div class="ui checkbox">
+						  	<input id="prior-lines-1" value="1" type="checkbox" tabindex="0" class="hidden">
+							<label>1</label>
+						</div>
 					</div>
-					<div class="ui checkbox">
-						<input id="prior-lines-2" value="2" type="checkbox">
-						<label>2</label>
+					<div class="field">
+						<div class="ui checkbox">
+							<input id="prior-lines-2" value="2" type="checkbox" tabindex="0" class="hidden">
+							<label>2</label>
+						</div>
 					</div>
-					<div class="ui checkbox">
-						<input id="prior-lines-3" value="3" type="checkbox">
-						<label>3</label>
+					<div class="field">
+						<div class="ui checkbox">
+							<input id="prior-lines-3" value="3" type="checkbox" tabindex="0" class="hidden">
+							<label>3</label>
+						</div>
 					</div>
-					<div class="ui checkbox">
-						<input id="prior-lines-4" value=">3" type="checkbox">
-						<label>&gt;3</label>
-				 	</div>
+					<div class="field">
+						<div class="ui checkbox">
+							<input id="prior-lines-4" value=">3" type="checkbox" tabindex="0" class="hidden">
+							<label>&gt;3</label>
+					 	</div>
+					 </div>
 				</div>
 
 				<div class="field">
