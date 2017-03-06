@@ -49,9 +49,9 @@
 			<!-- ENDIF showHandleInput -->
 
 			<!-- IF isTopic -->
-			<div class="category-list-container col-lg-3 col-md-12 hidden-sm hidden-xs">
+<!-- 			<div class="category-list-container col-lg-3 col-md-12 hidden-sm hidden-xs">
 				<select tabindex="3" class="form-control category-list"></select>
-			</div>
+			</div> -->
 			<!-- ENDIF isTopic -->
 
 		</div>
@@ -59,12 +59,18 @@
 		<!-- IF isTopicOrMain -->
 		<!-- IF !isEditing -->
 		<form class="ui huge form">
-		   	<div class="fields">
-		   		<div class="three wide field">
+		   	<div class="four fields">
+		   		<div class="field">
+		   			<label>Category></label>
+		   			<div class="category-list-container col-lg-3 col-md-12 hidden-sm hidden-xs">
+						<select tabindex="3" class="form-control category-list"></select>
+					</div>
+		   		</div>
+		   		<div class="field">
 					<label>Age</label>
 				  	<input type="text" id="age" name="age" maxlength="3" placeholder="Patient's Age">
 				</div>
-		   		<div class="three wide field">
+		   		<div class="field">
 					<label>Sex</label>
 					<select id="sex" name="sex" class="ui dropdown">
 				  		<option value="">Select patient's sex</option>
@@ -72,7 +78,7 @@
 				  		<option value="Female">Female</option>
 					</select>
 			   	</div>
-			   	<div class="three wide field">
+			   	<div class="field">
 					<label>ECOG PS</label>
 					<select id="ecog-ps" name="ecog-ps" class="ui dropdown">
 				  		<option value="0">0</option>
@@ -106,24 +112,31 @@
 				</div>
 			</div>
 
+			<input  id="ad_Checkbox1" class="ads_Checkbox" type="checkbox" value="1" />
+			<input  id="ad_Checkbox2" class="ads_Checkbox" type="checkbox" value="2" />
+			<input  id="ad_Checkbox3" class="ads_Checkbox" type="checkbox" value="3" />
+			<input  id="ad_Checkbox4" class="ads_Checkbox" type="checkbox" value="4" />
+			
+			<input type="button" id="save_value" name="save_value" value="Save" />
+
 			<div class="two fields">
 				<div class="field">
 				<label>Prior Lines of Therapy</label>
 			  		<div class="ui checkbox">
 					  	<input id="prior-lines-0" value="0" type="checkbox">
-						<label>0&nbsp;&nbsp;</label>
+						<label>0</label>
 					</div>
 					<div class="ui checkbox">
 					  	<input id="prior-lines-1" value="1" type="checkbox">
-						<label>1&nbsp;&nbsp;</label>
+						<label>1</label>
 					</div>
 					<div class="ui checkbox">
 						<input id="prior-lines-2" value="2" type="checkbox">
-						<label>2&nbsp;&nbsp;</label>
+						<label>2</label>
 					</div>
 					<div class="ui checkbox">
 						<input id="prior-lines-3" value="3" type="checkbox">
-						<label>3&nbsp;&nbsp;</label>
+						<label>3</label>
 					</div>
 					<div class="ui checkbox">
 						<input id="prior-lines-4" value=">3" type="checkbox">
@@ -157,7 +170,7 @@
 					<span class="help hidden">[[modules:composer.compose]] <i class="fa fa-question-circle"></i></span>
 					<span class="toggle-preview hide">[[modules:composer.show_preview]]</span>
 				</div>
-				<textarea class="write" tabindex="4"></textarea>
+				<textarea class="write" tabindex="4" placeholder="Additional information, files, images, etc."></textarea>
 			</div>
 			<div class="hidden-sm hidden-xs preview-container">
 				<div class="help-text">
