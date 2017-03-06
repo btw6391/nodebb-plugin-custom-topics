@@ -1,22 +1,6 @@
 'use strict';
 /*global utils, app*/
 
-var categoryType;
-
-$(window).on('filter:composer.build', function(ev, data) {
-	if (20 <= postData.cid <= 30) {
-		categoryType = "patientCases";
-	}
-
-	else if (33 <= postData.cid <= 36) {
-		categoryType = "newTreatmentMode";
-	}
-
-	else {
-		categoryType = "general";
-	}
-});
-
 $(window).on('action:composer.submit', function(ev, data) {
     // data.composerEl is the dom element for the composer
     // data.action can be `topics.post`, `posts.reply` or `posts.edit`

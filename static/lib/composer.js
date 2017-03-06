@@ -367,6 +367,20 @@ define('composer', [
 			isEditing = postData ? !!postData.pid : false,
 			isGuestPost = postData ? parseInt(postData.uid, 10) === 0 : false;
 
+		var categoryType;
+
+		if (postData.cid >= 20 && postData.cid <= 30) {
+			categoryType = "patientCases";
+		}
+
+		else if (postData.cid >= 33 && postData.cid <= 36) {
+			categoryType = "newTreatmentMode";
+		}
+
+		else {
+			categoryType = "general";
+		}
+
 		// see
 		// https://github.com/NodeBB/NodeBB/issues/2994 and
 		// https://github.com/NodeBB/NodeBB/issues/1951
@@ -387,7 +401,8 @@ define('composer', [
 			showHandleInput:  config.allowGuestHandles && (app.user.uid === 0 || (isEditing && isGuestPost && app.user.isAdmin)),
 			handle: postData ? postData.handle || '' : undefined,
 			formatting: composer.formatting,
-			tagWhitelist: ajaxify.data.tagWhitelist
+			tagWhitelist: ajaxify.data.tagWhitelist,
+			categoryType: categoryType
 		};
 
 		if (data.mobile) {
