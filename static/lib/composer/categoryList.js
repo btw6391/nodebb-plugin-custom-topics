@@ -117,7 +117,7 @@ define('composer/categoryList', function() {
 		category.children.sort(function(a, b) {
 			return a.order - b.order;
 		}).forEach(function(child) {
-			recursive(child, listEl, '&nbsp;&nbsp;&nbsp;&nbsp;' + level);
+			recursive(child, listEl, '&nbsp;&nbsp;' + level, postData);
 		});
 	}
 

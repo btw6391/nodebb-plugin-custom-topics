@@ -8,7 +8,7 @@
 			
 			<!-- IF isTopic -->
 			<div class="category-name-container">
-				<span class="category-name"></span> <i class="fa fa-sort"></i>
+				<span class="category-name"></span>New Post</i>
 			</div>
 			<!-- ENDIF isTopic -->
 			
