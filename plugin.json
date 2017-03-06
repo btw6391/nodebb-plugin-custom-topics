@@ -17,7 +17,8 @@
 	],
 	"scripts": [
 		"static/lib/main.js",
-		"static/lib/composer.js"
+		"static/lib/composer.js",
+		"static/lib/composer/categoryList.js"
 	],
 	"templates": "static/templates"
 }
