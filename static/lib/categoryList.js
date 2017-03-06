@@ -53,7 +53,7 @@ define('composer/categoryList', function() {
 			var selectCategory = $('<option value="0"></option>');
 			selectCategory.translateText('[[modules:composer.select_category]]').appendTo(listEl);
 			categories.forEach(function(category) {
-				recursive(category, listEl, '');
+				recursive(category, listEl, '', postData);
 			});
 
 			if (postData.cid) {
@@ -94,18 +94,18 @@ define('composer/categoryList', function() {
 		});
 	}
 
-	function recursive(category, listEl, level) {
+	function recursive(category, listEl, level, postData) {
 		if (category.link) {
 			return;
 		}
 
 		var bullet = level ? '&bull; ' : '';
 
-		if (category.cid >= 20 && category.cid <= 30) {
+		if (postData.cid >= 20 && postData.cid <= 30) {
 			$('<option value="' + category.cid + '" ' + (category.noPrivilege ? 'disabled' : '') + '>' + level + bullet + category.name + '</option>').appendTo(listEl);
 		}
 
-		else if (category.cid >= 33 && category.cid <= 36) {
+		else if (postData.cid >= 33 && postData.cid <= 36) {
 			$('<option value="' + category.cid + '" ' + (category.noPrivilege ? 'disabled' : '') + '>' + level + bullet + category.name + '</option>').appendTo(listEl);
 		}
 
