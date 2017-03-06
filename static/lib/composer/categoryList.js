@@ -146,7 +146,7 @@ define('composer/categoryList', function() {
 		}
 
 		else {
-			if (!(category.cid >= 19 && category.cid <= 31) || !(category.cid >= 33 && category.cid <= 36)) {
+			if (!(category.cid >= 19 && category.cid <= 31) && !(category.cid >= 33 && category.cid <= 36)) {
 				$('<option value="' + category.cid + '" ' + (category.noPrivilege ? 'disabled' : '') + '>' + level + bullet + category.name + '</option>').appendTo(listEl);
 				$('<li data-cid="' + category.cid + '">' + category.name + '</li>').appendTo($('.category-selector'));
 			}
