@@ -53,7 +53,7 @@ define('composer/categoryList', function() {
 			var selectCategory = $('<option value="0"></option>');
 			selectCategory.translateText('[[modules:composer.select_category]]').appendTo(listEl);
 			categories.forEach(function(category) {
-				recursive(category, listEl, '', postData);
+				recursive(category, listEl, '', postData.cid);
 			});
 
 			if (postData.cid) {
@@ -94,19 +94,23 @@ define('composer/categoryList', function() {
 		});
 	}
 
-	function recursive(category, listEl, level, postData) {
+	function recursive(category, listEl, level, cid) {
 		if (category.link) {
 			return;
 		}
 
 		var bullet = level ? '&bull; ' : '';
 
-		if (postData.cid >= 20 && postData.cid <= 30) {
-			$('<option value="' + category.cid + '" ' + (category.noPrivilege ? 'disabled' : '') + '>' + level + bullet + category.name + '</option>').appendTo(listEl);
+		if (cid >= 20 && cid <= 30) {
+			if (category.cid >= 20 && category.cid <= 30) {
+				$('<option value="' + category.cid + '" ' + (category.noPrivilege ? 'disabled' : '') + '>' + level + bullet + category.name + '</option>').appendTo(listEl);
+			}
 		}
 
-		else if (postData.cid >= 33 && postData.cid <= 36) {
-			$('<option value="' + category.cid + '" ' + (category.noPrivilege ? 'disabled' : '') + '>' + level + bullet + category.name + '</option>').appendTo(listEl);
+		else if (cid >= 33 && cid <= 36) {
+			if (category.cid >= 33 && category.cid <= 36) {
+				$('<option value="' + category.cid + '" ' + (category.noPrivilege ? 'disabled' : '') + '>' + level + bullet + category.name + '</option>').appendTo(listEl);
+			}
 		}
 
 		else {
@@ -117,7 +121,7 @@ define('composer/categoryList', function() {
 		category.children.sort(function(a, b) {
 			return a.order - b.order;
 		}).forEach(function(child) {
-			recursive(child, listEl, '&nbsp;&nbsp;' + level, postData);
+			recursive(child, listEl, '&nbsp;&nbsp;' + level, cid);
 		});
 	}
 
