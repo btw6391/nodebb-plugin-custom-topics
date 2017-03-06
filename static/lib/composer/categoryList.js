@@ -101,28 +101,63 @@ define('composer/categoryList', function() {
 
 		var bullet = level ? '&bull; ' : '';
 
-		if (cid >= 20 && cid <= 30) {
-			if (category.cid >= 20 && category.cid <= 30) {
-				$('<option value="' + category.cid + '" ' + (category.noPrivilege ? 'disabled' : '') + '>' + level + bullet + category.name + '</option>').appendTo(listEl);
-			}
+		if (category.cid == 19) {
+			$('<option value="' + category.cid + '" ' + (category.noPrivilege ? 'disabled' : '') + '>' + level + bullet + category.name + '</option>').appendTo(listEl);
+
+			category.children.sort(function(a, b) {return a.order - b.order;}).forEach(function(child) {
+				$('<option value="' + child.cid + '" ' + (child.noPrivilege ? 'disabled' : '') + '>' + level + bullet + child.name + '</option>').appendTo(listEl);
+			});
 		}
 
-		else if (cid >= 33 && cid <= 36) {
-			if (category.cid >= 33 && category.cid <= 36) {
-				$('<option value="' + category.cid + '" ' + (category.noPrivilege ? 'disabled' : '') + '>' + level + bullet + category.name + '</option>').appendTo(listEl);
-			}
+		else if (category.cid == 31) {
+			$('<option value="' + category.cid + '" ' + (category.noPrivilege ? 'disabled' : '') + '>' + level + bullet + category.name + '</option>').appendTo(listEl);
+
+			category.children.sort(function(a, b) {return a.order - b.order;}).forEach(function(child) {
+				$('<option value="' + child.cid + '" ' + (child.noPrivilege ? 'disabled' : '') + '>' + level + bullet + child.name + '</option>').appendTo(listEl);
+			});
 		}
 
 		else {
 			$('<option value="' + category.cid + '" ' + (category.noPrivilege ? 'disabled' : '') + '>' + level + bullet + category.name + '</option>').appendTo(listEl);
 			$('<li data-cid="' + category.cid + '">' + category.name + '</li>').appendTo($('.category-selector'));
+
+			category.children.sort(function(a, b) {return a.order - b.order;}).forEach(function(child) {
+				$('<option value="' + child.cid + '" ' + (child.noPrivilege ? 'disabled' : '') + '>' + level + bullet + child.name + '</option>').appendTo(listEl);
+				$('<li data-cid="' + child.cid + '">' + child.name + '</li>').appendTo($('.category-selector'));
+			});
 		}
 
-		category.children.sort(function(a, b) {
-			return a.order - b.order;
-		}).forEach(function(child) {
-			recursive(child, listEl, '&nbsp;&nbsp;' + level, cid);
-		});
+		// if (cid >= 20 && cid <= 30) {
+
+		// 	categoryType = "patientCase";
+
+		// 	if (category.cid >= 20 && category.cid <= 30) {
+		// 		$('<option value="' + category.cid + '" ' + (category.noPrivilege ? 'disabled' : '') + '>' + level + bullet + category.name + '</option>').appendTo(listEl);
+		// 	}
+		// }
+
+		// else if (cid >= 33 && cid <= 36) {
+
+		// 	categoryType = "newTreatment";
+
+		// 	if (category.cid >= 33 && category.cid <= 36) {
+		// 		$('<option value="' + category.cid + '" ' + (category.noPrivilege ? 'disabled' : '') + '>' + level + bullet + category.name + '</option>').appendTo(listEl);
+		// 	}
+		// }
+
+		// else {
+
+		// 	categoryType = "general";
+
+		// 	$('<option value="' + category.cid + '" ' + (category.noPrivilege ? 'disabled' : '') + '>' + level + bullet + category.name + '</option>').appendTo(listEl);
+		// 	$('<li data-cid="' + category.cid + '">' + category.name + '</li>').appendTo($('.category-selector'));
+		// }
+
+		// category.children.sort(function(a, b) {
+		// 	return a.order - b.order;
+		// }).forEach(function(child) {
+		// 	recursive(child, listEl, '&nbsp;&nbsp;' + level, cid);
+		// });
 	}
 
 	return categoryList;

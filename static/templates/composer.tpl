@@ -8,7 +8,7 @@
 			
 			<!-- IF isTopic -->
 			<div class="category-name-container">
-				<span class="category-name"></span>New Post</i>
+				<span class="category-name"></span>
 			</div>
 			<!-- ENDIF isTopic -->
 			
