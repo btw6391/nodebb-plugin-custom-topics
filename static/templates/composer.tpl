@@ -115,38 +115,26 @@
 			<div class="two fields">
 				<div class="field">
 					<label>Prior Lines of Therapy</label>
-					<div class="inline field">
-						<div class="field">
-					  		<div class="ui checkbox">
-							  	<input id="prior-lines-0" value="0" type="checkbox" tabindex="0" class="hidden">
-								<label>0</label>
-							</div>
-						</div>
-						<div class="field">
-							<div class="ui checkbox">
-							  	<input id="prior-lines-1" value="1" type="checkbox" tabindex="0" class="hidden">
-								<label>1</label>
-							</div>
-						</div>
-						<div class="field">
-							<div class="ui checkbox">
-								<input id="prior-lines-2" value="2" type="checkbox" tabindex="0" class="hidden">
-								<label>2</label>
-							</div>
-						</div>
-						<div class="field">
-							<div class="ui checkbox">
-								<input id="prior-lines-3" value="3" type="checkbox" tabindex="0" class="hidden">
-								<label>3</label>
-							</div>
-						</div>
-						<div class="field">
-							<div class="ui checkbox">
-								<input id="prior-lines-4" value=">3" type="checkbox" tabindex="0" class="hidden">
-								<label>&gt;3</label>
-						 	</div>
-						 </div>
+			  		<div class="ui checkbox">
+					  	<input id="prior-lines-0" value="0 " type="checkbox">
+						<label>0</label>
 					</div>
+					<div class="ui checkbox">
+					  	<input id="prior-lines-1" value="1 " type="checkbox">
+						<label>1</label>
+					</div>
+					<div class="ui checkbox">
+						<input id="prior-lines-2" value="2 " type="checkbox">
+						<label>2</label>
+					</div>
+					<div class="ui checkbox">
+						<input id="prior-lines-3" value="3 " type="checkbox">
+						<label>3</label>
+					</div>
+					<div class="ui checkbox">
+						<input id="prior-lines-4" value=">3 " type="checkbox">
+						<label>&gt;3</label>
+				 	</div>
 				</div>
 
 				<div class="field">
