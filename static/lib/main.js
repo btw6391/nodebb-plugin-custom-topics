@@ -1,7 +1,7 @@
 'use strict';
 /*global utils, app*/
 
-var lines;
+var lines = [];
 
 $('#prior_lines_value').click(function() {
     lines = $('input[type=checkbox]:checked').map(function(_, el) {
