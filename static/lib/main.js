@@ -40,7 +40,7 @@ $(window).on('action:composer.submit', function(ev, data) {
 				priorInterv: priorInterv,
 				progression: progression,
 				questions: questions
-			}
+			};
 
 			data.composerData.message = '**Patient Characteristics**<br>' +
 									 	'<br>**Age:** ' + age + 
@@ -57,21 +57,14 @@ $(window).on('action:composer.submit', function(ev, data) {
 		}
 
 		else if ((cid >= 33 && cid <= 36) || cid == 31) {
-			data.composerData.message = '**New Treatment Modality**<br>';
+			var oncologyField = data.composerEl.find('#onocology-field').val();
+
+			data.composerData.formData = {
+				oncologyField: oncologyField
+			};
+
+			data.composerData.message = '**New Treatment Modality**<br>' +
+										'<br>**Oncology Field:** ' + oncologyField;
 		}
 	}
 });
-
-// $(window).on('action:composer.submit', function(ev, data) {
-
-// 	if (action === 'posts.edit') {
-// 		composerData = {
-// 			pid: postData.pid,
-// 			handle: handleEl ? handleEl.val() : undefined,
-// 			content: bodyEl.val(),
-// 			title: titleEl.val(),
-// 			thumb: thumbEl.val() || '',
-// 			tags: tags.getTags(post_uuid)
-// 		};
-// 	}
-// });

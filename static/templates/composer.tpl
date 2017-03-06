@@ -156,26 +156,73 @@
 					<input type="text" id="questions" name="questions" placeholder="Ask any questions here">
 				</div>
 			</div>
+
+			<div class="row write-preview-container">
+				<div class="write-container">
+					<div class="help-text">
+						<span class="help hidden">[[modules:composer.compose]] <i class="fa fa-question-circle"></i></span>
+						<span class="toggle-preview hide">[[modules:composer.show_preview]]</span>
+					</div>
+					<textarea class="write" tabindex="4" placeholder="Enter additional information, files, images, etc."></textarea>
+				</div>
+				<div class="hidden-sm hidden-xs preview-container">
+					<div class="help-text">
+						<span class="toggle-preview">[[modules:composer.hide_preview]]</span>
+					</div>
+					<div class="preview well"></div>
+				</div>
+			</div>
 		</form>
 		<!-- ENDIF isPatientCase -->
+
+		<!-- IF isNewTreatment -->
+		<form class="ui huge form" style="overflow: scroll;">
+		   	<div class="two fields">
+		   		<div class="field">
+		   			<label>Category</label>
+		   			<div class="category-list-container">
+						<select id="category" name="category" class="category-list ui dropdown"></select>
+					</div>
+		   		</div>
+			   	<div class="field">
+					<label>Oncology Field</label>
+					<select id="oncology-field" name="oncology-field" class="ui dropdown">
+						<option value="">Select a field</option>
+				  		<option value="Breast Cancer">Breast Cancer</option>
+						<option value="Lung Cancer">Lung Cancer</option>
+						<option value="Sarcoma">Sarcoma</option>
+						<option value="Hematologic Malignancies">Hematologic Malignancies</option>
+						<option value="Neuro-oncology">Neuro-oncology</option>
+						<option value="Melanoma">Melanoma</option>
+						<option value="Gastrointestinal Cancer">Gastrointestinal Cancer</option>
+						<option value="Genitourinary Cancer">Genitourinary Cancer</option>
+						<option value="Gynecologic Cancer">Gynecologic Cancer</option>
+						<option value="Head and Neck Cancer">Head and Neck Cancer</option>
+						<option value="Pediatric Oncology">Pediatric Oncology</option>
+					</select>
+			   	</div>
+			</div>
+
+			<div class="row write-preview-container">
+				<div class="write-container">
+					<div class="help-text">
+						<span class="help hidden">[[modules:composer.compose]] <i class="fa fa-question-circle"></i></span>
+						<span class="toggle-preview hide">[[modules:composer.show_preview]]</span>
+					</div>
+					<textarea class="write" tabindex="4" placeholder="Enter general description, files, images, etc."></textarea>
+				</div>
+				<div class="hidden-sm hidden-xs preview-container">
+					<div class="help-text">
+						<span class="toggle-preview">[[modules:composer.hide_preview]]</span>
+					</div>
+					<div class="preview well"></div>
+				</div>
+			</div>
+		</form>
+		<!-- ENDIF isNewTreatment -->
+
 		<!-- ENDIF !isEditing -->
 		<!-- ENDIF isTopicOrMain -->
-
-		<div class="row write-preview-container">
-			<div class="write-container">
-				<div class="help-text">
-					<span class="help hidden">[[modules:composer.compose]] <i class="fa fa-question-circle"></i></span>
-					<span class="toggle-preview hide">[[modules:composer.show_preview]]</span>
-				</div>
-				<textarea class="write" tabindex="4" placeholder="Additional information, files, images, etc."></textarea>
-			</div>
-			<div class="hidden-sm hidden-xs preview-container">
-				<div class="help-text">
-					<span class="toggle-preview">[[modules:composer.hide_preview]]</span>
-				</div>
-				<div class="preview well"></div>
-			</div>
-		</div>
 
 		<div class="category-tag-row">
 			<div class="btn-toolbar formatting-bar">

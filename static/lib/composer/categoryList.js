@@ -136,18 +136,23 @@ define('composer/categoryList', function() {
 		if (category.cid >= 19 && category.cid <= 30) {
 			if (cid >= 19 && cid <= 30) {
 				$('<option value="' + category.cid + '" ' + (category.noPrivilege ? 'disabled' : '') + '>' + level + bullet + category.name + '</option>').appendTo(listEl);
+				return;
 			}
 		}
 
 		else if ((category.cid >= 33 && category.cid <= 36) || category.cid == 31) {
 			if ((cid >= 33 && cid <= 36) || cid == 31) {
 				$('<option value="' + category.cid + '" ' + (category.noPrivilege ? 'disabled' : '') + '>' + level + bullet + category.name + '</option>').appendTo(listEl);
+				return;
 			}
 		}
 
 		else {
-			$('<option value="' + category.cid + '" ' + (category.noPrivilege ? 'disabled' : '') + '>' + level + bullet + category.name + '</option>').appendTo(listEl);
-			$('<li data-cid="' + category.cid + '">' + category.name + '</li>').appendTo($('.category-selector'));
+			if (!(cid >= 19 && cid <= 31) || !(cid >= 33 && cid <= 36)) {
+				$('<option value="' + category.cid + '" ' + (category.noPrivilege ? 'disabled' : '') + '>' + level + bullet + category.name + '</option>').appendTo(listEl);
+				$('<li data-cid="' + category.cid + '">' + category.name + '</li>').appendTo($('.category-selector'));
+				return;
+			}
 		}
 
 		category.children.sort(function(a, b) {
