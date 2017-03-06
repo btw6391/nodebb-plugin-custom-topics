@@ -58,7 +58,7 @@
 
 		<!-- IF isTopicOrMain -->
 		<!-- IF !isEditing -->
-		<form class="ui huge form">
+		<form class="ui huge form" style="overflow: scroll;">
 		   	<div class="four fields">
 		   		<div class="field">
 		   			<label>Category</label>

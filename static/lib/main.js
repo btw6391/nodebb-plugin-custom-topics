@@ -17,14 +17,14 @@ $(window).on('action:composer.submit', function(ev, data) {
 		var mutation = data.composerEl.find('#mutation-status').val();
 		
 		var lines = [];
-		
+
 		lines = $('input[type=checkbox]:checked').map(function(){
       		return $(this).val();
     	}).get();
 
     	console.log("Lines: " + lines);
 
-		var priorLines = lines.split(', ');
+		var priorLines = lines;
 		var priorInterv = data.composerEl.find('#prior-intervention').val();
 		var progression = data.composerEl.find('#progression-history').val();
 		var questions = data.composerEl.find('#questions').val();
