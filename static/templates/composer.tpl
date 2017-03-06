@@ -263,9 +263,11 @@
 		<!-- ENDIF isTopicOrMain -->
 
 		<!-- IF isTopic -->
+		<!-- IF isGeneral -->
 		<ul class="category-selector visible-xs visible-sm">
 
 		</ul>
+		<!-- ENDIF isGeneral -->
 		<!-- ENDIF isTopic -->
 
 		<div class="imagedrop"><div>[[topic:composer.drag_and_drop_images]]</div></div>

@@ -98,10 +98,21 @@ define('composer/categoryList', function() {
 		if (category.link) {
 			return;
 		}
-		var bullet = level ? '&bull; ' : '';
-		$('<option value="' + category.cid + '" ' + (category.noPrivilege ? 'disabled' : '') + '>' + level + bullet + category.name + '</option>').appendTo(listEl);
 
-		$('<li data-cid="' + category.cid + '">' + category.name + '</li>').appendTo($('.category-selector'));
+		var bullet = level ? '&bull; ' : '';
+
+		if (category.cid >= 20 && category.cid <= 30) {
+			$('<option value="' + category.cid + '" ' + (category.noPrivilege ? 'disabled' : '') + '>' + level + bullet + category.name + '</option>').appendTo(listEl);
+		}
+
+		else if (category.cid >= 33 && category.cid <= 36) {
+			$('<option value="' + category.cid + '" ' + (category.noPrivilege ? 'disabled' : '') + '>' + level + bullet + category.name + '</option>').appendTo(listEl);
+		}
+
+		else {
+			$('<option value="' + category.cid + '" ' + (category.noPrivilege ? 'disabled' : '') + '>' + level + bullet + category.name + '</option>').appendTo(listEl);
+			$('<li data-cid="' + category.cid + '">' + category.name + '</li>').appendTo($('.category-selector'));
+		}
 
 		category.children.sort(function(a, b) {
 			return a.order - b.order;
