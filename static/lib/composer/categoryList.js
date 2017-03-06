@@ -133,25 +133,22 @@ define('composer/categoryList', function() {
 		// 	return;
 		// }
 
-		if (category.cid >= 19 && category.cid <= 30) {
-			if (cid >= 19 && cid <= 30) {
+		if (cid >= 19 && cid <= 30) {
+			if (category.cid >= 19 && category.cid <= 30) {
 				$('<option value="' + category.cid + '" ' + (category.noPrivilege ? 'disabled' : '') + '>' + level + bullet + category.name + '</option>').appendTo(listEl);
-				return;
 			}
 		}
 
-		else if ((category.cid >= 33 && category.cid <= 36) || category.cid == 31) {
-			if ((cid >= 33 && cid <= 36) || cid == 31) {
+		else if ((cid >= 33 && cid <= 36) || cid == 31) {
+			if ((category.cid >= 33 && category.cid <= 36) || category.cid == 31) {
 				$('<option value="' + category.cid + '" ' + (category.noPrivilege ? 'disabled' : '') + '>' + level + bullet + category.name + '</option>').appendTo(listEl);
-				return;
 			}
 		}
 
 		else {
-			if (!(cid >= 19 && cid <= 31) || !(cid >= 33 && cid <= 36)) {
+			if (!(category.cid >= 19 && category.cid <= 31) || !(category.cid >= 33 && category.cid <= 36)) {
 				$('<option value="' + category.cid + '" ' + (category.noPrivilege ? 'disabled' : '') + '>' + level + bullet + category.name + '</option>').appendTo(listEl);
 				$('<li data-cid="' + category.cid + '">' + category.name + '</li>').appendTo($('.category-selector'));
-				return;
 			}
 		}
 

@@ -57,7 +57,7 @@ $(window).on('action:composer.submit', function(ev, data) {
 		}
 
 		else if ((cid >= 33 && cid <= 36) || cid == 31) {
-			var oncologyField = data.composerEl.find('#onocology-field').val();
+			var oncologyField = data.composerEl.find('#oncology-field').val();
 
 			data.composerData.formData = {
 				oncologyField: oncologyField
