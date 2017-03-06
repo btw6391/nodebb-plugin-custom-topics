@@ -365,27 +365,10 @@ define('composer', [
 			isTopic = postData ? postData.hasOwnProperty('cid') : false,
 			isMain = postData ? !!postData.isMain : false,
 			isEditing = postData ? !!postData.pid : false,
-			isGuestPost = postData ? parseInt(postData.uid, 10) === 0 : false;
-
-		var isPatientCase, isNewTreatment, isGeneral;
-
-		if (postData.cid >= 20 && postData.cid <= 30) {
-			isPatientCase = true;
-			isNewTreatment = false;
-			isGeneral = false;
-		}
-
-		else if (postData.cid >= 33 && postData.cid <= 36) {
-			isPatientCase = false;
-			isNewTreatment = true;
-			isGeneral = false;
-		}
-
-		else {
-			isPatientCase = false;
-			isNewTreatment = false;
-			isGeneral = true;
-		}
+			isGuestPost = postData ? parseInt(postData.uid, 10) === 0 : false,
+			isPatientCase = postData.categoryType.isPatientCase,
+			isNewTreatment = postData.categoryType.isNewTreatment,
+			isGeneral = postData.categoryType.isGeneral;
 
 		// see
 		// https://github.com/NodeBB/NodeBB/issues/2994 and
