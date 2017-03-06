@@ -1,6 +1,22 @@
 'use strict';
 /*global utils, app*/
 
+var categoryType;
+
+$(window).on('filter:composer.build', function(ev, data) {
+	if (20 <= postData.cid <= 30) {
+		categoryType = "patientCases";
+	}
+
+	else if (33 <= postData.cid <= 36) {
+		categoryType = "newTreatmentMode";
+	}
+
+	else {
+		categoryType = "general";
+	}
+});
+
 $(window).on('action:composer.submit', function(ev, data) {
     // data.composerEl is the dom element for the composer
     // data.action can be `topics.post`, `posts.reply` or `posts.edit`
@@ -15,16 +31,11 @@ $(window).on('action:composer.submit', function(ev, data) {
 		var abnormalLab = data.composerEl.find('#abnormal-labs').val();
 		var addInfo = data.composerEl.find('#additional-info').val();
 		var mutation = data.composerEl.find('#mutation-status').val();
-		
-		var lines = [];
 
-		lines = $('input[type=checkbox]:checked').map(function(){
+		var priorLines = $('input[type=checkbox]:checked').map(function(){
       		return $(this).val();
     	}).get();
 
-    	console.log("Lines: " + lines);
-
-		var priorLines = lines;
 		var priorInterv = data.composerEl.find('#prior-intervention').val();
 		var progression = data.composerEl.find('#progression-history').val();
 		var questions = data.composerEl.find('#questions').val();

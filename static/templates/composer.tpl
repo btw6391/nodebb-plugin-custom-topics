@@ -58,6 +58,7 @@
 
 		<!-- IF isTopicOrMain -->
 		<!-- IF !isEditing -->
+		<!-- IF categoryType == "patientCases" -->
 		<form class="ui huge form" style="overflow: scroll;">
 		   	<div class="four fields">
 		   		<div class="field">
@@ -154,6 +155,7 @@
 				</div>
 			</div>
 		</form>
+		<!-- ENDIF categoryType == "patientCases" -->
 		<!-- ENDIF !isEditing -->
 		<!-- ENDIF isTopicOrMain -->
 
