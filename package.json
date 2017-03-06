@@ -1,6 +1,6 @@
 {
   "name": "nodebb-plugin-custom-topics",
-  "version": "0.4.8",
+  "version": "0.4.9",
   "description": "Adds custom forms to composer when posting new topics",
   "main": "library.js",
   "scripts": {
