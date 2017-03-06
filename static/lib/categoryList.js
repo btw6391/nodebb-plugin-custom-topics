@@ -64,14 +64,11 @@ define('composer/categoryList', function() {
 
 			$('.category-name').translateText(listEl.find('option[value="' + postData.cid + '"]').text() || '[[modules:composer.select_category]]');
 			$('.category-selector').find('li[data-cid="' + postData.cid + '"]').addClass('active');
-
-			setCategoryType(postData, postData.cid);
 		});
 
 		listEl.on('change', function() {
 			if (postData.hasOwnProperty('cid')) {
 				changeCategory(postContainer, postData, $(this).val());
-				setCategoryType(postData, $(this).val())
 			}
 
 			$('[tabindex=' + (parseInt($(this).attr('tabindex'), 10) + 1) + ']').trigger('focus');
@@ -86,7 +83,6 @@ define('composer/categoryList', function() {
 			$('.category-list').val(selectedCid);
 			if (postData.hasOwnProperty('cid')) {
 				changeCategory(postContainer, postData, selectedCid);
-				setCategoryType(postData, selectedCid);
 			}
 		});
 	};
@@ -96,26 +92,6 @@ define('composer/categoryList', function() {
 		require(['composer/tags'], function (tags) {
 			tags.updateWhitelist(postContainer, cid);
 		});
-	}
-
-	function setCategoryType(postData, cid) {
-		if (cid >= 20 && cid <= 30) {
-			postData.categoryType.isPatientCase = true;
-			postData.categoryType.isNewTreatment = false;
-			postData.categoryType.isGeneral = false;
-		}
-
-		else if (cid >= 33 && cid <= 36) {
-			postData.categoryType.isPatientCase = false;
-			postData.categoryType.isNewTreatment = true;
-			postData.categoryType.isGeneral = false;
-		}
-
-		else {
-			postData.categoryType.isPatientCase = false;
-			postData.categoryType.isNewTreatment = false;
-			postData.categoryType.isGeneral = true;
-		}
 	}
 
 	function recursive(category, listEl, level) {

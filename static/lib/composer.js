@@ -366,9 +366,7 @@ define('composer', [
 			isMain = postData ? !!postData.isMain : false,
 			isEditing = postData ? !!postData.pid : false,
 			isGuestPost = postData ? parseInt(postData.uid, 10) === 0 : false,
-			isPatientCase = postData.categoryType.isPatientCase,
-			isNewTreatment = postData.categoryType.isNewTreatment,
-			isGeneral = postData.categoryType.isGeneral;
+			categoryType = setCategoryType(postData);
 
 		// see
 		// https://github.com/NodeBB/NodeBB/issues/2994 and
@@ -391,9 +389,9 @@ define('composer', [
 			handle: postData ? postData.handle || '' : undefined,
 			formatting: composer.formatting,
 			tagWhitelist: ajaxify.data.tagWhitelist,
-			isPatientCase: isPatientCase,
-			isNewTreatment: isNewTreatment,
-			isGeneral: isGeneral
+			isPatientCase: categoryType.isPatientCase,
+			isNewTreatment: categoryType.isNewTreatment,
+			isGeneral: categoryType.isGeneral
 		};
 
 		if (data.mobile) {
@@ -645,6 +643,33 @@ define('composer', [
 		}
 		onHide();
 	}
+
+
+	function setCategoryType(postData) {
+
+		var isPatientCase = false,
+			isNewTreatment = false,
+			isGeneral = false;
+
+		if (postData.cid >= 20 && postData.cid <= 30) {
+			isPatientCase = true;
+		}
+
+		else if (postData.cid >= 33 && postData.cid <= 36) {
+			isNewTreatment = true;
+		}
+
+		else {
+			isGeneral = true;
+		}
+
+		var categoryType = {isPatientCase: isPatientCase,
+							isNewTreatment: isNewTreatment,
+							isGeneral: isGeneral
+		};
+
+		return categoryType;
+	};
 
 	composer.minimize = function(post_uuid) {
 		var postContainer = $('#cmp-uuid-' + post_uuid);
