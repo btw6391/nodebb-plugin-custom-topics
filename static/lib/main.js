@@ -1,14 +1,6 @@
 'use strict';
 /*global utils, app*/
 
-var lines;
-
-$('#prior_lines_value').click(function() {
-    lines = $('input[type=checkbox]:checked').map(function(_, el) {
-        return $(el).val();
-    }).get();
-});
-
 $(window).on('action:composer.submit', function(ev, data) {
     // data.composerEl is the dom element for the composer
     // data.action can be `topics.post`, `posts.reply` or `posts.edit`
@@ -23,7 +15,16 @@ $(window).on('action:composer.submit', function(ev, data) {
 		var abnormalLab = data.composerEl.find('#abnormal-labs').val();
 		var addInfo = data.composerEl.find('#additional-info').val();
 		var mutation = data.composerEl.find('#mutation-status').val();
-		var priorLines = lines;
+		
+		var lines = [];
+		
+		lines = $('input[type=checkbox]:checked').map(function(){
+      		return $(this).val();
+    	}).get();
+
+    	console.log("Lines: " + lines);
+
+		var priorLines = lines.split(', ');
 		var priorInterv = data.composerEl.find('#prior-intervention').val();
 		var progression = data.composerEl.find('#progression-history').val();
 		var questions = data.composerEl.find('#questions').val();
