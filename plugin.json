@@ -13,13 +13,11 @@
 		"static": "./static"
 	},
 	"less": [
-		"static/less/flat-ui.less"
 	],
 	"scripts": [
 		"static/lib/main.js",
 		"static/lib/composer.js",
-		"static/lib/composer/categoryList.js",
-		"static/lib/composer/flat-ui.js"
+		"static/lib/composer/categoryList.js"
 	],
 	"templates": "static/templates"
 }
