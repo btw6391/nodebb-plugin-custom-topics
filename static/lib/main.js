@@ -20,9 +20,11 @@ $(window).on('action:composer.submit', function(ev, data) {
 			var addInfo = data.composerEl.find('#additional-info').val();
 			var mutation = data.composerEl.find('#mutation-status').val();
 
-			var priorLines = $('input[type=checkbox]:checked').map(function(){
+			var lines = $('input[type=checkbox]:checked').map(function(){
 	      		return $(this).val();
 	    	}).get();
+
+	    	var priorLines = lines.join(', ');
 
 			var priorInterv = data.composerEl.find('#prior-intervention').val();
 			var progression = data.composerEl.find('#progression-history').val();
