@@ -23,8 +23,18 @@
 				<input class="handle form-control" type="text" tabindex="1" placeholder="[[topic:composer.handle_placeholder]]" value="{handle}" />
 			</div>
 			<!-- ENDIF showHandleInput -->
+
 			<!-- IF isTopic -->
 			<!-- IF isGeneral -->
+			<h3 style="text-align: center; padding-bottom: 15px;">New Topic</h3>
+			<div class="col-xs-6">
+				<!-- IF isTopicOrMain -->
+				<input class="title form-control" type="text" tabindex="1" placeholder="[[topic:composer.title_placeholder]]" value="{title}"/>
+				<!-- ELSE -->
+				<span class="title form-control">[[topic:composer.replying_to, "{title}"]]</span>
+				<!-- ENDIF isTopicOrMain -->
+			</div>
+
 			<div class="category-list-container col-lg-3 col-md-12 hidden-sm hidden-xs">
 				<select tabindex="3" class="form-control category-list"></select>
 			</div>
@@ -32,16 +42,15 @@
 			<!-- ENDIF isTopic -->
 		</div>
 
-		<h3 style="text-align: center; padding-bottom: 15px;">Post a New Case</h3>
-
 		<div style="overflow-x: hidden; overflow-y: scroll;">
 			<!-- IF isTopicOrMain -->
 			<!-- IF !isEditing -->
 			<!-- IF isPatientCase -->
+			<h3 style="text-align: center; padding-bottom: 15px;">New Case</h3>
 			<form id="taskForm">
 			   	<div class="form group">
 			   		<div class="row">
-			   			<div class="col-xs-6">
+			   			<div class="col-xs-6 title-container">
 				   			<label>Post Title</label>
 				   			<!-- IF isTopicOrMain -->
 							<input class="title form-control" type="text" tabindex="1" placeholder="Brief Title Description" value="{title}">
@@ -158,6 +167,7 @@
 			<!-- ENDIF isPatientCase -->
 
 			<!-- IF isNewTreatment -->
+			<h3 style="text-align: center; padding-bottom: 15px;">New Modality</h3>
 			<form class="ui huge form">
 			   	<div class="two fields">
 			   		<div class="field">
