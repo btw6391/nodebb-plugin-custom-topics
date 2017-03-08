@@ -19,7 +19,7 @@
 		"static/lib/main.js",
 		"static/lib/composer.js",
 		"static/lib/composer/categoryList.js",
-		"static/lib/composer/checkbox.js"
+		"static/lib/composer/flat-ui.js"
 	],
 	"templates": "static/templates"
 }
