@@ -17,36 +17,33 @@
 			<h4 class="title">[[topic:composer.replying_to, "{title}"]]</h4>
 			<!-- ENDIF !isTopicOrMain -->
 		</nav>
-		<div class="row title-container">
-			<!-- IF showHandleInput -->
-			<div class="col-sm-3 col-md-12">
-				<input class="handle form-control" type="text" tabindex="1" placeholder="[[topic:composer.handle_placeholder]]" value="{handle}" />
-			</div>
-			<!-- ENDIF showHandleInput -->
-
-			<!-- IF isTopic -->
-			<!-- IF isGeneral -->
-			<h3 style="text-align: center; padding-bottom: 15px;">New Topic</h3>
-			<div class="col-xs-6">
-				<!-- IF isTopicOrMain -->
-				<input class="title form-control" type="text" tabindex="1" placeholder="[[topic:composer.title_placeholder]]" value="{title}"/>
-				<!-- ELSE -->
-				<span class="title form-control">[[topic:composer.replying_to, "{title}"]]</span>
-				<!-- ENDIF isTopicOrMain -->
-			</div>
-
-			<div class="category-list-container col-lg-3 col-md-12 hidden-sm hidden-xs">
-				<select tabindex="3" class="form-control category-list"></select>
-			</div>
-			<!-- ENDIF isGeneral -->
-			<!-- ENDIF isTopic -->
-		</div>
 
 		<div style="overflow-x: hidden; overflow-y: scroll;">
 			<!-- IF isTopicOrMain -->
 			<!-- IF !isEditing -->
+
+			<!-- IF isGeneral -->
+			<h4 style="text-align: center; padding-bottom: 15px;">New Topic</h4>
+			<div class="row">
+	   			<div class="col-xs-6">
+		   			<label>Post Title</label>
+		   			<!-- IF isTopicOrMain -->
+					<input class="title form-control" type="text" tabindex="1" placeholder="Brief Title Description" value="{title}">
+					<!-- ELSE -->
+					<span class="title form-control">[[topic:composer.replying_to, "{title}"]]</span>
+					<!-- ENDIF isTopicOrMain -->
+		   		</div>
+		   		<div class="col-xs-6"">
+		   			<label>Category</label>
+		   			<div class="category-list-container">
+						<select id="category" name="category" class="category-list form-control select select-primary"></select>
+					</div>
+		   		</div>
+		   	</div>
+		   	<!-- ENDIF isGeneral ->>
+
 			<!-- IF isPatientCase -->
-			<h3 style="text-align: center; padding-bottom: 15px;">New Case</h3>
+			<h4 style="text-align: center; padding-bottom: 15px;">New Case</h4>
 			<form>
 		   		<div class="row">
 		   			<div class="col-xs-6">
@@ -155,7 +152,7 @@
 			<!-- ENDIF isPatientCase -->
 
 			<!-- IF isNewTreatment -->
-			<h3 style="text-align: center; padding-bottom: 15px;">New Modality</h3>
+			<h4 style="text-align: center; padding-bottom: 15px;">New Modality</h4>
 			<form>
 				<div class="row">
 			   		<div class="col-xs-6">
@@ -187,9 +184,13 @@
 			<!-- ENDIF !isEditing -->
 			<!-- ENDIF isTopicOrMain -->
 
-			<!-- IF !isGeneral -->
-			<label>Additional Information, Files, Images, etc.</label> 
-			<!-- ENDIF !isGeneral -->
+			<!-- IF !isEditing -->
+				<!-- IF !isGeneral -->
+				<label>Additional Information, Files, Images, etc.</label> 
+				<!-- ENDIF !isGeneral -->
+			<!-- ELSE -->
+			<label>Text Composer</label> 
+			<!-- ENDIF !isEditing -->
 			<div class="row write-preview-container">
 				<div class="write-container">
 					<div class="help-text">
