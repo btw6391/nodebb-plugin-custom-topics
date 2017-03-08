@@ -38,15 +38,18 @@
 				<!-- ENDIF isTopicOrMain -->
 			</div>
 			<!-- ENDIF showHandleInput -->
-			<!-- IF isTopic && isGeneral -->
+			<!-- IF isTopic -->
+			<!-- IF isGeneral -->
 			<div class="category-list-container col-lg-3 col-md-12 hidden-sm hidden-xs">
 				<select tabindex="3" class="form-control category-list"></select>
 			</div>
-			<!-- ENDIF isTopic && isGeneral -->
+			<!-- ENDIF isGeneral -->
+			<!-- ENDIF isTopic -->
 		</div>
 
 		<div style="overflow: scroll;">
-			<!-- IF isTopicOrMain && !isEditing  -->
+			<!-- IF isTopicOrMain -->
+			<!-- IF !isEditing -->
 			<!-- IF isPatientCase -->
 			<form class="ui huge form">
 			   	<div class="four fields">
@@ -176,7 +179,8 @@
 				</div>
 			</form>
 			<!-- ENDIF isNewTreatment -->
-			<!-- ENDIF isTopicOrMain && !isEditing  -->
+			<!-- ENDIF !isEditing -->
+			<!-- ENDIF isTopicOrMain -->
 
 			<div class="row write-preview-container">
 				<div class="write-container">
@@ -278,9 +282,11 @@
 		</div>
 		<!-- ENDIF isTopicOrMain -->
 
-		<!-- IF isTopic && isGeneral -->
+		<!-- IF isTopic -->
+		<!-- IF isGeneral -->
 		<ul class="category-selector visible-xs visible-sm"></ul>
-		<!-- ENDIF isTopic && isGeneral -->
+		<!-- ENDIF isGeneral -->
+		<!-- ENDIF isTopic -->
 
 		<div class="imagedrop"><div>[[topic:composer.drag_and_drop_images]]</div></div>
 
