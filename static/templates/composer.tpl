@@ -101,26 +101,31 @@
 				<div class="two fields">
 					<div class="field">
 						<label>Prior Lines of Therapy</label>
-				  		<div class="checkbox">
-						  	<input id="prior-lines-0" value="0" type="checkbox">
-							<label>0</label>
+						<div class="form-check form-check-inline">
+							<label class="form-check-label">
+								<input class="form-check-input" type="checkbox" id="prior-lines-0" value="0"> 0
+							</label>
 						</div>
-						<div class="checkbox">
-						  	<input id="prior-lines-1" value="1" type="checkbox">
-							<label>1</label>
+						<div class="form-check form-check-inline">
+							<label class="form-check-label">
+								<input class="form-check-input" type="checkbox" id="prior-lines-1" value="1"> 1
+							</label>
 						</div>
-						<div class="checkbox">
-							<input id="prior-lines-2" value="2" type="checkbox">
-							<label>2</label>
+						<div class="form-check form-check-inline">
+							<label class="form-check-label">
+								<input class="form-check-input" type="checkbox" id="prior-lines-2" value="2"> 2
+							</label>
 						</div>
-						<div class="checkbox">
-							<input id="prior-lines-3" value="3" type="checkbox">
-							<label>3</label>
+						<div class="form-check form-check-inline">
+							<label class="form-check-label">
+								<input class="form-check-input" type="checkbox" id="prior-lines-3" value="3"> 3
+							</label>
 						</div>
-						<div class="checkbox">
-							<input id="prior-lines-4" value=">3" type="checkbox">
-							<label>&gt;3</label>
-					 	</div>
+						<div class="form-check form-check-inline">
+							<label class="form-check-label">
+								<input class="form-check-input" type="checkbox" id="prior-lines-4" value=">3"> &gt;3
+							</label>
+						</div>
 					</div>
 
 					<div class="field">
@@ -174,7 +179,9 @@
 			<!-- ENDIF !isEditing -->
 			<!-- ENDIF isTopicOrMain -->
 
+			<!-- IF !isGeneral -->
 			<label>Additional Information, Files, Images, etc.</label> 
+			<!-- ENDIF !isGeneral -->
 			<div class="row write-preview-container">
 				<div class="write-container">
 					<div class="help-text">
