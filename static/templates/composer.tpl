@@ -44,9 +44,9 @@
 			   			<div class="col-xs-6">
 				   			<label>Post Title</label>
 				   			<!-- IF isTopicOrMain -->
-							<input class="form-control" type="text" tabindex="1" placeholder="Brief Title Description" value="{title}">
+							<input class="title form-control" type="text" tabindex="1" placeholder="Brief Title Description" value="{title}">
 							<!-- ELSE -->
-							<span class="form-control">[[topic:composer.replying_to, "{title}"]]</span>
+							<span class="title form-control">[[topic:composer.replying_to, "{title}"]]</span>
 							<!-- ENDIF isTopicOrMain -->
 				   		</div>
 				   		<div class="col-xs-6"">
