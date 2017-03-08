@@ -47,120 +47,108 @@
 			<!-- IF !isEditing -->
 			<!-- IF isPatientCase -->
 			<h3 style="text-align: center; padding-bottom: 15px;">New Case</h3>
-			<form id="taskForm">
-			   	<div class="form group">
-			   		<div class="row">
-			   			<div class="col-xs-6 title-container">
-				   			<label>Post Title</label>
-				   			<!-- IF isTopicOrMain -->
-							<input class="title form-control" type="text" tabindex="1" placeholder="Brief Title Description" value="{title}">
-							<!-- ELSE -->
-							<span class="title form-control">[[topic:composer.replying_to, "{title}"]]</span>
-							<!-- ENDIF isTopicOrMain -->
-				   		</div>
-				   		<div class="col-xs-6"">
-				   			<label>Category</label>
-				   			<div class="category-list-container">
-								<select id="category" name="category" class="category-list form-control select select-primary"></select>
-							</div>
-				   		</div>
+			<form>
+		   		<div class="row">
+		   			<div class="col-xs-6">
+			   			<label>Post Title</label>
+			   			<!-- IF isTopicOrMain -->
+						<input class="title form-control" type="text" tabindex="1" placeholder="Brief Title Description" value="{title}">
+						<!-- ELSE -->
+						<span class="title form-control">[[topic:composer.replying_to, "{title}"]]</span>
+						<!-- ENDIF isTopicOrMain -->
+			   		</div>
+			   		<div class="col-xs-6"">
+			   			<label>Category</label>
+			   			<div class="category-list-container">
+							<select id="category" name="category" class="category-list form-control select select-primary"></select>
+						</div>
+			   		</div>
+			   	</div>
+
+				<div class="row">
+					<div class="col-xs-6">
+						<label>Age</label>
+					  	<input type="text" id="age" name="age" class="form-control" placeholder="Patient's Age">
+					</div>
+			   		<div class="col-xs-6">
+						<label>Sex</label>
+						<select id="sex" name="sex" class="form-control select select-primary">
+					  		<option value="">Select patient's sex</option>
+					  		<option value="Male">Male</option>
+					  		<option value="Female">Female</option>
+						</select>
 				   	</div>
 				</div>
-
-				<div class="form group">
-					<div class="row">
-						<div class="col-xs-6">
-							<label>Age</label>
-						  	<input type="text" id="age" name="age" class="form-control" placeholder="Patient's Age">
-						</div>
-				   		<div class="col-xs-6">
-							<label>Sex</label>
-							<select id="sex" name="sex" class="form-control select select-primary">
-						  		<option value="">Select patient's sex</option>
-						  		<option value="Male">Male</option>
-						  		<option value="Female">Female</option>
-							</select>
-					   	</div>
-					</div>
-				</div>
 				
-				<div class="form group">
-					<div class="row">
-						<div class="col-xs-6">
-							<label>ECOG PS</label>
-							<select id="ecog-ps" name="ecog-ps" class="form-control select select-primary">
-						  		<option value="">Select ECOG #</option>
-						  		<option value="0">0</option>
-						  		<option value="1">1</option>
-						  		<option value="2">2</option>
-						  		<option value="3">3</option>
-						  		<option value="4">4</option>
-							</select>
-					   	</div>
-						<div class="col-xs-6">
-						  	<label>Abnormal Organ Function</label>
-						  	<input type="text" id="abnormal-function" name="abnormal-function" class="form-control" placeholder="Describe the function">
-						</div>
+				<div class="row">
+					<div class="col-xs-6">
+						<label>ECOG PS</label>
+						<select id="ecog-ps" name="ecog-ps" class="form-control select select-primary">
+					  		<option value="">Select ECOG #</option>
+					  		<option value="0">0</option>
+					  		<option value="1">1</option>
+					  		<option value="2">2</option>
+					  		<option value="3">3</option>
+					  		<option value="4">4</option>
+						</select>
+				   	</div>
+					<div class="col-xs-6">
+					  	<label>Abnormal Organ Function</label>
+					  	<input type="text" id="abnormal-function" name="abnormal-function" class="form-control" placeholder="Describe the function">
 					</div>
 				</div>
 
-				<div class="form-group">
-					<div class="row">
-						<div class="col-xs-6">
-						  	<label>Abnormal Labs</label>
-						  	<input type="text" id="abnormal-labs" name="abnormal-labs" class="form-control" placeholder="Describe labs">
-						</div>
-						<div class="col-xs-6">
-							<label>Mutation Status</label>  
-							<input type="text" id="mutation-status"" name="mutation-status" class="form-control" placeholder="Describe mutation status">
-						</div>
+				<div class="row">
+					<div class="col-xs-6">
+					  	<label>Abnormal Labs</label>
+					  	<input type="text" id="abnormal-labs" name="abnormal-labs" class="form-control" placeholder="Describe labs">
+					</div>
+					<div class="col-xs-6">
+						<label>Mutation Status</label>  
+						<input type="text" id="mutation-status"" name="mutation-status" class="form-control" placeholder="Describe mutation status">
 					</div>
 				</div>
 
-				<div class="form-group">
-					<div class="row">
-						<div class="col-xs-6">
-							<label>Prior Lines of Therapy</label>
-							<div class="form-inline">
-								<label class="checkbox">
-									<input type="checkbox" id="prior-lines-0" value="0">
-									0
-								</label>
-								<label class="checkbox">
-									<input type="checkbox" id="prior-lines-1" value="1">
-									1
-								</label>
-								<label class="checkbox">
-									<input type="checkbox" id="prior-lines-2" value="2">
-									2
-								</label>
-								<label class="checkbox">
-									<input type="checkbox" id="prior-lines-3" value="3">
-									3
-								</label>
-								<label class="checkbox">
-									<input type="checkbox" id="prior-lines-4" value=">3">
-									&gt;3
-								</label>
-							</div>
+				<div class="row">
+					<div class="col-xs-6">
+						<label>Prior Lines of Therapy</label>
+						<div class="form-inline">
+							<label class="checkbox">
+								<input type="checkbox" id="prior-lines-0" value="0">
+								0
+							</label>
+							<label class="checkbox">
+								<input type="checkbox" id="prior-lines-1" value="1">
+								1
+							</label>
+							<label class="checkbox">
+								<input type="checkbox" id="prior-lines-2" value="2">
+								2
+							</label>
+							<label class="checkbox">
+								<input type="checkbox" id="prior-lines-3" value="3">
+								3
+							</label>
+							<label class="checkbox">
+								<input type="checkbox" id="prior-lines-4" value=">3">
+								&gt;3
+							</label>
 						</div>
-						<div class="col-xs-6">
-						  	<label>Prior Intervention(s)</label>
-						   	<input type="text" id="prior-intervention" name="prior-intervention" class="form-control" placeholder="Describe progression after each line of therapy and any other issues of concern"> 
-						</div>
+					</div>
+					<div class="col-xs-6">
+					  	<label>Prior Intervention(s)</label>
+					   	<input type="text" id="prior-intervention" name="prior-intervention" class="form-control" placeholder="Describe progression after each line of therapy and any other issues of concern"> 
 					</div>
 				</div>
 
-				<div class="form-group">
-					<div class="row">
-						<div class="col-xs-6">
-						  	<label for="progression-history">Progression History</label>  
-							<input type="text" id="progression-history" name="progression-history" class="form-control" placeholder="Ex. chemo/targeted therapy, surgery, radiation">
-						</div>
-						<div class="col-xs-6">
-							<label for="questions">Question/Inquiry</label>  
-							<input type="text" id="questions" name="questions" class="form-control" placeholder="Ask any questions here">
-						</div>
+				<div class="row">
+					<div class="col-xs-6">
+					  	<label for="progression-history">Progression History</label>  
+						<input type="text" id="progression-history" name="progression-history" class="form-control" placeholder="Ex. chemo/targeted therapy, surgery, radiation">
+					</div>
+					<div class="col-xs-6">
+						<label for="questions">Question/Inquiry</label>  
+						<input type="text" id="questions" name="questions" class="form-control" placeholder="Ask any questions here">
 					</div>
 				</div>
 			</form>
@@ -168,17 +156,17 @@
 
 			<!-- IF isNewTreatment -->
 			<h3 style="text-align: center; padding-bottom: 15px;">New Modality</h3>
-			<form class="ui huge form">
-			   	<div class="two fields">
-			   		<div class="field">
+			<form>
+				<div class="row">
+			   		<div class="col-xs-6">
 			   			<label>Category</label>
 			   			<div class="category-list-container">
-							<select id="category" name="category" class="category-list ui dropdown"></select>
+							<select id="category" name="category" class="category-list form-control select select-primary"></select>
 						</div>
 			   		</div>
-				   	<div class="field">
+				   	<div class="col-xs-6">
 						<label>Oncology Field</label>
-						<select id="oncology-field" name="oncology-field" class="ui dropdown">
+						<select id="oncology-field" name="oncology-field" class="form-control select select-primary">
 							<option value="">Select a field</option>
 					  		<option value="Breast Cancer">Breast Cancer</option>
 							<option value="Lung Cancer">Lung Cancer</option>
