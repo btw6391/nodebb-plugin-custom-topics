@@ -22,21 +22,6 @@
 			<div class="col-sm-3 col-md-12">
 				<input class="handle form-control" type="text" tabindex="1" placeholder="[[topic:composer.handle_placeholder]]" value="{handle}" />
 			</div>
-			<div class="col-lg-12 col-md-12">
-				<!-- IF isTopicOrMain -->
-				<input class="title form-control" type="text" tabindex="1" placeholder="Post Title" value="{title}"/>
-				<!-- ELSE -->
-				<span class="title form-control">[[topic:composer.replying_to, "{title}"]]</span>
-				<!-- ENDIF isTopicOrMain -->
-			</div>
-			<!-- ELSE -->
-			<div class="col-lg-12 col-md-12">
-				<!-- IF isTopicOrMain -->
-				<input class="title form-control" type="text" tabindex="1" placeholder="Post Title" value="{title}"/>
-				<!-- ELSE -->
-				<span class="title form-control">[[topic:composer.replying_to, "{title}"]]</span>
-				<!-- ENDIF isTopicOrMain -->
-			</div>
 			<!-- ENDIF showHandleInput -->
 			<!-- IF isTopic -->
 			<!-- IF isGeneral -->
@@ -52,14 +37,25 @@
 			<!-- IF !isEditing -->
 			<!-- IF isPatientCase -->
 			<form class="ui huge form">
-			   	<div class="four fields">
+			   	<div class="two fields">
 			   		<div class="field">
-			   			<label>Tumor Type</label>
+			   			<label>Post Title</label>
+			   			<!-- IF isTopicOrMain -->
+						<input class="title" type="text" tabindex="1" placeholder="Brief Title Description" value="{title}">
+						<!-- ELSE -->
+						<span class="title">[[topic:composer.replying_to, "{title}"]]</span>
+						<!-- ENDIF isTopicOrMain -->
+			   		</div>
+			   		<div class="field">
+			   			<label>Category</label>
 			   			<div class="category-list-container">
 							<select id="category" name="category" class="category-list ui dropdown"></select>
 						</div>
 			   		</div>
-			   		<div class="field">
+				</div>
+
+				<div class="two fields">
+					<div class="field">
 						<label>Age</label>
 					  	<input type="text" id="age" name="age" maxlength="3" placeholder="Patient's Age">
 					</div>
@@ -71,7 +67,10 @@
 					  		<option value="Female">Female</option>
 						</select>
 				   	</div>
-				   	<div class="field">
+				</div>
+				
+				<div class="two fields">
+					<div class="field">
 						<label>ECOG PS</label>
 						<select id="ecog-ps" name="ecog-ps" class="ui dropdown">
 					  		<option value="">Select ECOG #</option>
@@ -82,23 +81,16 @@
 					  		<option value="4">4</option>
 						</select>
 				   	</div>
-				</div>
-				
-				<div class="two fields">
 					<div class="field">
 					  	<label>Abnormal Organ Function</label>
 					  	<input type="text" id="abnormal-function" name="abnormal-function" placeholder="Describe the function">
-					</div>
-					<div class="field">
-					  	<label>Abnormal Labs</label>
-					  	<input type="text" id="abnormal-labs" name="abnormal-labs" placeholder="Describe labs">
 					</div>
 				</div>
 
 				<div class="two fields">
 					<div class="field">
-					  	<label>Additional Patient/Tumor Information</label>  
-					  	<input type="text" id="additional-info" name="additional-info" placeholder="Describe additional info">
+					  	<label>Abnormal Labs</label>
+					  	<input type="text" id="abnormal-labs" name="abnormal-labs" placeholder="Describe labs">
 					</div>
 					<div class="field">
 						<label>Mutation Status</label>  
@@ -109,24 +101,24 @@
 				<div class="two fields">
 					<div class="field">
 						<label>Prior Lines of Therapy</label>
-				  		<div class="ui checkbox">
-						  	<input id="prior-lines-0" value="0 " type="checkbox">
+				  		<div class="checkbox">
+						  	<input id="prior-lines-0" value="0" type="checkbox">
 							<label>0</label>
 						</div>
-						<div class="ui checkbox">
-						  	<input id="prior-lines-1" value="1 " type="checkbox">
+						<div class="checkbox">
+						  	<input id="prior-lines-1" value="1" type="checkbox">
 							<label>1</label>
 						</div>
-						<div class="ui checkbox">
-							<input id="prior-lines-2" value="2 " type="checkbox">
+						<div class="checkbox">
+							<input id="prior-lines-2" value="2" type="checkbox">
 							<label>2</label>
 						</div>
-						<div class="ui checkbox">
-							<input id="prior-lines-3" value="3 " type="checkbox">
+						<div class="checkbox">
+							<input id="prior-lines-3" value="3" type="checkbox">
 							<label>3</label>
 						</div>
-						<div class="ui checkbox">
-							<input id="prior-lines-4" value=">3 " type="checkbox">
+						<div class="checkbox">
+							<input id="prior-lines-4" value=">3" type="checkbox">
 							<label>&gt;3</label>
 					 	</div>
 					</div>
@@ -182,17 +174,18 @@
 			<!-- ENDIF !isEditing -->
 			<!-- ENDIF isTopicOrMain -->
 
+			<label>Additional Information, Files, Images, etc.</label> 
 			<div class="row write-preview-container">
 				<div class="write-container">
 					<div class="help-text">
 						<span class="help hidden">[[modules:composer.compose]] <i class="fa fa-question-circle"></i></span>
-						<span class="toggle-preview">[[modules:composer.show_preview]]</span>
+						<span class="toggle-preview hide">[[modules:composer.show_preview]]</span>
 					</div>
-					<textarea class="write" tabindex="4" placeholder="Enter additional information, files, images, etc."></textarea>
+					<textarea class="write" tabindex="4"></textarea>
 				</div>
 				<div class="hidden-sm hidden-xs preview-container">
 					<div class="help-text">
-						<span class="toggle-preview hide">[[modules:composer.hide_preview]]</span>
+						<span class="toggle-preview">[[modules:composer.hide_preview]]</span>
 					</div>
 					<div class="preview well"></div>
 				</div>
@@ -261,26 +254,6 @@
 				</div>
 			</div>
 		</div>
-
-		<!-- IF isTopicOrMain -->
-		<div class="tag-row">
-			<div class="tags-container">
-				<div class="btn-group dropup <!-- IF !tagWhitelist.length -->hidden<!-- ENDIF !tagWhitelist.length -->" component="composer/tag/dropdown">
-					<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">
-						<span class="visible-sm-inline visible-md-inline visible-lg-inline"><i class="fa fa-tags"></i></span>
-						<span class="caret"></span>
-					</button>
-
-					<ul class="dropdown-menu">
-						<!-- BEGIN tagWhitelist -->
-						<li data-tag="@value"><a href="#">@value</a></li>
-						<!-- END tagWhitelist -->
-					</ul>
-				</div>
-				<input class="tags" type="text" class="form-control" placeholder="[[tags:enter_tags_here, {minimumTagLength}, {maximumTagLength}]]" tabindex="5"/>
-			</div>
-		</div>
-		<!-- ENDIF isTopicOrMain -->
 
 		<!-- IF isTopic -->
 		<!-- IF isGeneral -->
