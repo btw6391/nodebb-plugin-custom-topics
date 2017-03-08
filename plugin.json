@@ -13,7 +13,7 @@
 		"static": "./static"
 	},
 	"less": [
-		"static/less/form.less"
+		"static/less/flat-ui.less"
 	],
 	"scripts": [
 		"static/lib/main.js",
