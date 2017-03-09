@@ -23,21 +23,18 @@
 				<input class="handle form-control" type="text" tabindex="1" placeholder="[[topic:composer.handle_placeholder]]" value="{handle}" />
 			</div>
 			<div class="col-lg-12 col-md-12">
-				<!-- IF isTopicOrMain -->
-				<input class="title form-control" type="text" tabindex="1" placeholder="Post Title" value="{title}"/>
-				<!-- ELSE -->
+				<!-- IF !isTopicOrMain -->
 				<span class="title form-control">[[topic:composer.replying_to, "{title}"]]</span>
-				<!-- ENDIF isTopicOrMain -->
+				<!-- ENDIF !isTopicOrMain -->
 			</div>
 			<!-- ELSE -->
 			<div class="col-lg-12 col-md-12">
-				<!-- IF isTopicOrMain -->
-				<input class="title form-control" type="text" tabindex="1" placeholder="Post Title" value="{title}"/>
-				<!-- ELSE -->
+				<!-- IF !isTopicOrMain -->
 				<span class="title form-control">[[topic:composer.replying_to, "{title}"]]</span>
-				<!-- ENDIF isTopicOrMain -->
+				<!-- ENDIF !isTopicOrMain -->
 			</div>
 			<!-- ENDIF showHandleInput -->
+			
 			<!-- IF isTopic -->
 			<!-- IF isGeneral -->
 			<div class="category-list-container col-lg-3 col-md-12 hidden-sm hidden-xs">
@@ -55,13 +52,9 @@
 			<h4 style="text-align: center; padding-bottom: 15px;">New Case</h4>
 			<form>
 		   		<div class="row">
-		   			<div class="col-xs-6">
+		   			<div class="col-xs-6 title-container">
 			   			<label>Post Title</label>
-			   			<!-- IF isTopicOrMain -->
-						<input class="title form-control" type="text" tabindex="1" placeholder="Brief Title Description" value="{title}">
-						<!-- ELSE -->
-						<span class="title form-control">[[topic:composer.replying_to, "{title}"]]</span>
-						<!-- ENDIF isTopicOrMain -->
+						<input class="title form-control" type="text" tabindex="1" placeholder="Brief Title Description" value="{title}"/>
 			   		</div>
 			   		<div class="col-xs-6"">
 			   			<label>Category</label>
