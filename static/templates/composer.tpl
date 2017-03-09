@@ -37,9 +37,9 @@
 			
 			<!-- IF isTopic -->
 			<!-- IF isGeneral -->
-			<div class="category-list-container col-lg-3 col-md-12 hidden-sm hidden-xs">
+<!-- 			<div class="category-list-container col-lg-3 col-md-12 hidden-sm hidden-xs">
 				<select tabindex="3" class="form-control category-list"></select>
-			</div>
+			</div> -->
 			<!-- ENDIF isGeneral -->
 			<!-- ENDIF isTopic -->
 		</div>
@@ -52,7 +52,7 @@
 			<h4 style="text-align: center; padding-bottom: 15px;">New Case</h4>
 			<form>
 		   		<div class="row">
-		   			<div class="col-xs-6 title-container">
+		   			<div class="col-xs-6">
 			   			<label>Post Title</label>
 						<input class="title form-control" type="text" tabindex="1" placeholder="Brief Title Description" value="{title}"/>
 			   		</div>
@@ -157,13 +157,17 @@
 			<h4 style="text-align: center; padding-bottom: 15px;">New Modality</h4>
 			<form>
 				<div class="row">
-			   		<div class="col-xs-6">
+			   		<div class="col-xs-4">
+			   			<label>Post Title</label>
+						<input class="title form-control" type="text" tabindex="1" placeholder="Brief Title Description" value="{title}"/>
+			   		</div>
+			   		<div class="col-xs-4">
 			   			<label>Category</label>
 			   			<div class="category-list-container">
 							<select id="category" name="category" class="category-list form-control select select-primary"></select>
 						</div>
 			   		</div>
-				   	<div class="col-xs-6">
+				   	<div class="col-xs-4">
 						<label>Oncology Field</label>
 						<select id="oncology-field" name="oncology-field" class="form-control select select-primary">
 							<option value="">Select a field</option>
@@ -184,6 +188,22 @@
 			</form>
 			<!-- ENDIF isNewTreatment -->
 
+			<!-- IF isGeneral -->
+			<h4 style="text-align: center; padding-bottom: 15px;">New Topic</h4>
+			<form>
+				<div class="col-xs-6">
+		   			<label>Post Title</label>
+					<input class="title form-control" type="text" tabindex="1" placeholder="Brief Title Description" value="{title}"/>
+		   		</div>
+		   		<div class="col-xs-6">
+		   			<label>Category</label>
+		   			<div class="category-list-container">
+						<select id="category" name="category" class="category-list form-control select select-primary"></select>
+					</div>
+		   		</div>
+		   	</form>
+			<!-- ENDIF isGeneral -->
+
 			<!-- ENDIF !isEditing -->
 			<!-- ENDIF isTopicOrMain -->
 
@@ -191,13 +211,13 @@
 				<div class="write-container">
 					<div class="help-text">
 						<span class="help hidden">[[modules:composer.compose]] <i class="fa fa-question-circle"></i></span>
-						<span class="toggle-preview">[[modules:composer.show_preview]]</span>
+						<span class="toggle-preview hide">[[modules:composer.show_preview]]</span>
 					</div>
 					<textarea class="write" tabindex="4" placeholder="Enter additional information, files, images, etc."></textarea>
 				</div>
 				<div class="hidden-sm hidden-xs preview-container">
 					<div class="help-text">
-						<span class="toggle-preview hide">[[modules:composer.hide_preview]]</span>
+						<span class="toggle-preview">[[modules:composer.hide_preview]]</span>
 					</div>
 					<div class="preview well"></div>
 				</div>
