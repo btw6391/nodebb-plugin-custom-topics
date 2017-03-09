@@ -47,9 +47,9 @@
 			<!-- ENDIF isTopic -->
 		</div>
 
+		<!-- IF isTopicOrMain -->
+		<!-- IF !isEditing -->
 		<div style="overflow-x: hidden; overflow-y: scroll;">
-			<!-- IF isTopicOrMain -->
-			<!-- IF !isEditing -->
 			<!-- IF isPatientCase -->
 			<h4 style="text-align: center; padding-bottom: 15px;">New Case</h4>
 			<form>
@@ -189,8 +189,9 @@
 				</div>
 			</form>
 			<!-- ENDIF isNewTreatment -->
-			<!-- ENDIF !isEditing -->
-			<!-- ENDIF isTopicOrMain -->
+		</div>
+		<!-- ENDIF !isEditing -->
+		<!-- ENDIF isTopicOrMain -->
 
 			<div class="row write-preview-container">
 				<div class="write-container">
