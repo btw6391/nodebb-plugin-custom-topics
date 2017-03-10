@@ -209,6 +209,7 @@
 			<!-- ENDIF !isEditing -->
 			<!-- ENDIF isTopicOrMain -->
 
+			<label>Information, Files, Images, etc.</label>
 			<div class="row write-preview-container">
 				<div class="write-container">
 					<div class="help-text">
@@ -283,9 +284,9 @@
 			</div>
 		</div>
 
-		<!-- IF isTopicOrMain -->
 		<div class="tag-row">
 			<div class="tags-container">
+				<!-- IF isTopicOrMain -->
 				<div class="btn-group dropup <!-- IF !tagWhitelist.length -->hidden<!-- ENDIF !tagWhitelist.length -->" component="composer/tag/dropdown">
 					<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">
 						<span class="visible-sm-inline visible-md-inline visible-lg-inline"><i class="fa fa-tags"></i></span>
@@ -298,15 +299,17 @@
 						<!-- END tagWhitelist -->
 					</ul>
 				</div>
-				<input class="tags" type="text" class="form-control" placeholder="[[tags:enter_tags_here, {minimumTagLength}, {maximumTagLength}]]" tabindex="5"/>
-			</div>
-			<div class="btn-group pull-right action-bar hidden-sm hidden-xs">
-				<button class="btn btn-primary composer-submit" data-action="post" tabindex="6"><i class="fa fa-check"></i> [[topic:composer.submit]]</button>
 
-				<button class="btn btn-default composer-discard" data-action="discard" tabindex="-1"><i class="fa fa-times"></i> [[topic:composer.discard]]</button>
+				<input class="tags" type="text" class="form-control" placeholder="Add tags, separated by comma" tabindex="5"/>
+				<!-- ENDIF isTopicOrMain -->
+
+				<div class="btn-group pull-right action-bar hidden-sm hidden-xs">
+					<button class="btn btn-primary composer-submit" data-action="post" tabindex="6"><i class="fa fa-check"></i> [[topic:composer.submit]]</button>
+
+					<button class="btn btn-default composer-discard" data-action="discard" tabindex="-1"><i class="fa fa-times"></i> [[topic:composer.discard]]</button>
+				</div>
 			</div>
 		</div>
-		<!-- ENDIF isTopicOrMain -->
 
 		<!-- IF isTopic -->
 		<!-- IF isGeneral -->
