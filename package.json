@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/btw6391/node-plugin-custom-topics.git"
+    "url": "git+https://github.com/btw6391/nodebb-plugin-custom-topics.git"
   },
   "keywords": [
     "NodeBB",
@@ -19,9 +19,9 @@
   "author": "btw6391 <btw6391@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/btw6391/node-plugin-custom-topics/issues"
+    "url": "https://github.com/btw6391/nodebb-plugin-custom-topics/issues"
   },
-  "homepage": "https://github.com/btw6391/node-plugin-custom-topics#readme",
+  "homepage": "https://github.com/btw6391/nodebb-plugin-custom-topics#readme",
   "nbbpm": {
     "compatibility": "^1.4.0"
   }
