@@ -1,1 +1,1 @@
-<h1>Custom Topics</h1>
+<h1>Custom Topics - Enabled</h1>
