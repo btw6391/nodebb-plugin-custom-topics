@@ -17,7 +17,6 @@ $(window).on('action:composer.submit', function(ev, data) {
 			var ecog = data.composerEl.find('#ecog-ps').val();
 			var abnormalFunc = data.composerEl.find('#abnormal-function').val();
 			var abnormalLab = data.composerEl.find('#abnormal-labs').val();
-			var addInfo = data.composerEl.find('#additional-info').val();
 			var mutation = data.composerEl.find('#mutation-status').val();
 
 			var lines = $('input[type=checkbox]:checked').map(function(){
@@ -36,7 +35,6 @@ $(window).on('action:composer.submit', function(ev, data) {
 				ecog: ecog,
 				abnormalFunc: abnormalFunc,
 				abnormalLab: abnormalLab,
-				addInfo: addInfo,
 				mutation: mutation,
 				priorLines: priorLines,
 				priorInterv: priorInterv,
@@ -44,18 +42,35 @@ $(window).on('action:composer.submit', function(ev, data) {
 				questions: questions
 			};
 
-			data.composerData.message = '**Patient Characteristics**<br>' +
-									 	'<br>**Age:** ' + age + 
-									 	'<br>**Sex:** ' + sex + 
-									 	'<br>**ECOG PS:** ' + ecog + 
-									 	'<br>**Abnormal Organ Function:** ' + abnormalFunc + 
-									 	'<br>**Abnormal Labs:** ' + abnormalLab + 
-									 	'<br>**Additional Patient/Tumor Information:** ' + addInfo + 
-									 	'<br>**Mutation Status:** ' + mutation + 
-									 	'<br>**Prior Lines of Therapy:** ' + priorLines + 
-									 	'<br>**Prior Intervention(s):** ' + priorInterv + 
-									 	'<br>**Progression History:** ' + progression + 
-									 	'<br>**Question/Inquiry:** ' + questions;
+			// data.composerData.message = '**Patient Characteristics**<br>' +
+			// 						 	'<br>**Age:** ' + age + 
+			// 						 	'<br>**Sex:** ' + sex + 
+			// 						 	'<br>**ECOG PS:** ' + ecog + 
+			// 						 	'<br>**Abnormal Organ Function:** ' + abnormalFunc + 
+			// 						 	'<br>**Abnormal Labs:** ' + abnormalLab + 
+			// 						 	'<br>**Mutation Status:** ' + mutation + 
+			// 						 	'<br>**Prior Lines of Therapy:** ' + priorLines + 
+			// 						 	'<br>**Prior Intervention(s):** ' + priorInterv + 
+			// 						 	'<br>**Progression History:** ' + progression + 
+			// 						 	'<br><br>**Question/Inquiry:** ' + questions +
+			// 						 	'<br><br>**Additional Info:** ';
+
+			data.composerData.message = `## **Question/Inquiry**
+										---
+										${questions}
+										## **Case Information**
+										---
+										**Age:** ${age}
+										**Sex:** ${sex}
+										**ECOG PS:** ${ecog}
+										**Abnormal Organ Function:** ${abnormalFunc}
+										**Abnormal Labs:** ${abnormalLab}
+										**Mutation Status:** ${mutation}
+										**Prior Lines of Therapy:** ${priorLines}
+										**Prior Intervention(s):** ${priorInterv}
+										**Progression History:** ${progression}
+										**Additional Information:** `;
+												
 		}
 
 		else if ((cid >= 33 && cid <= 36) || cid == 31) {
@@ -65,8 +80,13 @@ $(window).on('action:composer.submit', function(ev, data) {
 				oncologyField: oncologyField
 			};
 
-			data.composerData.message = '**New Treatment Modality**<br>' +
-										'<br>**Oncology Field:** ' + oncologyField;
+			// data.composerData.message = '**New Treatment Modality**<br>' +
+			// 							'<br>**Tumor Type:** ' + oncologyField;
+
+			data.composerData.message = `## **New Treatment Modality**
+										---
+										**Tumor Type:** ${oncologyField}
+										**Modality Information:** `;
 		}
 	}
 });

@@ -57,7 +57,7 @@
 						<input class="title form-control" type="text" tabindex="1" placeholder="Brief Title Description" value="{title}"/>
 			   		</div>
 			   		<div class="col-md-6"">
-			   			<label>Category</label>
+			   			<label>Tumor Type</label>
 			   			<div class="category-list-container">
 							<select id="category" name="category" class="category-list form-control select select-primary"></select>
 						</div>
@@ -162,7 +162,7 @@
 						<input class="title form-control" type="text" tabindex="1" placeholder="Brief Title Description" value="{title}"/>
 			   		</div>
 				   	<div class="col-md-4">
-						<label>Oncology Field</label>
+						<label>Tumor Type</label>
 						<select id="oncology-field" name="oncology-field" class="form-control select select-primary">
 							<option value="">Select a field</option>
 					  		<option value="Breast Cancer">Breast Cancer</option>
@@ -179,7 +179,7 @@
 						</select>
 				   	</div>
 				   	<div class="col-md-4">
-			   			<label>Category</label>
+			   			<label>Modality</label>
 			   			<div class="category-list-container">
 							<select id="category" name="category" class="category-list form-control select select-primary"></select>
 						</div>

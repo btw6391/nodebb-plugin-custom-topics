@@ -30,15 +30,13 @@ plugin.onTopicCreate = function(data, callback) {
     // data.data, this is the data that is submitted from the client side
     // Now all you have to do is validate `data.myCustomField` and set it in data.topic.
 
-    if (data.data.message) {
-        data.data.content = data.data.message + '<br><br>' + data.data.content;
-    }
-
     if (data.data.formData) {
         data.topic.formData = data.data.formData;
     }
 
-    console.dir(data);
+    if (data.data.message) {
+        data.data.content = data.data.message + data.data.content;
+    }
 
     callback(null, data);
 };
