@@ -23,25 +23,26 @@
 				<input class="handle form-control" type="text" tabindex="1" placeholder="[[topic:composer.handle_placeholder]]" value="{handle}" />
 			</div>
 			<div class="col-lg-12 col-md-12">
-				<!-- IF !isTopicOrMain -->
+				<!-- IF isTopicOrMain -->
+				<!-- IF isEditing -->
+				<input class="title form-control" type="text" tabindex="1" placeholder="[[topic:composer.title_placeholder]]" value="{title}"/>
+				<!-- ENDIF isEditing -->
+				<!-- ELSE -->
 				<span class="title form-control">[[topic:composer.replying_to, "{title}"]]</span>
-				<!-- ENDIF !isTopicOrMain -->
+				<!-- ENDIF isTopicOrMain -->
 			</div>
 			<!-- ELSE -->
 			<div class="col-lg-12 col-md-12">
-				<!-- IF !isTopicOrMain -->
+				<!-- IF isTopicOrMain -->
+				<!-- IF isEditing -->
+				<input class="title form-control" type="text" tabindex="1" placeholder="[[topic:composer.title_placeholder]]" value="{title}"/>
+				<!-- ENDIF isEditing -->
+				<!-- ELSE -->
 				<span class="title form-control">[[topic:composer.replying_to, "{title}"]]</span>
-				<!-- ENDIF !isTopicOrMain -->
+				<!-- ENDIF isTopicOrMain -->
 			</div>
 			<!-- ENDIF showHandleInput -->
 			
-			<!-- IF isTopic -->
-			<!-- IF isGeneral -->
-<!-- 			<div class="category-list-container col-lg-3 col-md-12 hidden-sm hidden-xs">
-				<select tabindex="3" class="form-control category-list"></select>
-			</div> -->
-			<!-- ENDIF isGeneral -->
-			<!-- ENDIF isTopic -->
 		</div>
 
 		<div style="overflow-x: hidden; overflow-y: scroll;">
