@@ -12,22 +12,27 @@ $(window).on('action:composer.submit', function(ev, data) {
     	var cid = data.composerData.cid;
 
     	if (cid >= 19 && cid <= 30) {
-			var age = data.composerEl.find('#age').val();
-			var sex = data.composerEl.find('#sex').val();
-			var ecog = data.composerEl.find('#ecog-ps').val();
-			var abnormalFunc = data.composerEl.find('#abnormal-function').val();
-			var abnormalLab = data.composerEl.find('#abnormal-labs').val();
-			var mutation = data.composerEl.find('#mutation-status').val();
+			var age = data.composerEl.find('#age').val() || "None";
+			var sex = data.composerEl.find('#sex').val() || "None";
+			var ecog = data.composerEl.find('#ecog-ps').val() || "None";
+			var abnormalFunc = data.composerEl.find('#abnormal-function').val() || "None";
+			var abnormalLab = data.composerEl.find('#abnormal-labs').val() || "None";
+			var mutation = data.composerEl.find('#mutation-status').val() || "None";
 
-			var lines = $('input[type=checkbox]:checked').map(function(){
+			var priorLines, linesArray = $('input[type=checkbox]:checked').map(function(){
 	      		return $(this).val();
 	    	}).get();
 
-	    	var priorLines = lines.join(', ');
+	    	if (linesArray.length == 0) {
+			    priorLines = "None";
+			}
+			else {
+			    priorLines = linesArray.join(', ');
+			}
 
-			var priorInterv = data.composerEl.find('#prior-intervention').val();
-			var progression = data.composerEl.find('#progression-history').val();
-			var questions = data.composerEl.find('#questions').val();
+			var priorInterv = data.composerEl.find('#prior-intervention').val() || "None";
+			var progression = data.composerEl.find('#progression-history').val() || "None";
+			var questions = data.composerEl.find('#questions').val() || "None";
 
 			data.composerData.formData = {
 				age: age,
@@ -41,19 +46,6 @@ $(window).on('action:composer.submit', function(ev, data) {
 				progression: progression,
 				questions: questions
 			};
-
-			// data.composerData.message = '**Patient Characteristics**<br>' +
-			// 						 	'<br>**Age:** ' + age + 
-			// 						 	'<br>**Sex:** ' + sex + 
-			// 						 	'<br>**ECOG PS:** ' + ecog + 
-			// 						 	'<br>**Abnormal Organ Function:** ' + abnormalFunc + 
-			// 						 	'<br>**Abnormal Labs:** ' + abnormalLab + 
-			// 						 	'<br>**Mutation Status:** ' + mutation + 
-			// 						 	'<br>**Prior Lines of Therapy:** ' + priorLines + 
-			// 						 	'<br>**Prior Intervention(s):** ' + priorInterv + 
-			// 						 	'<br>**Progression History:** ' + progression + 
-			// 						 	'<br><br>**Question/Inquiry:** ' + questions +
-			// 						 	'<br><br>**Additional Info:** ';
 
 			data.composerData.message = `## **Question/Inquiry**
 ---
@@ -74,14 +66,11 @@ ${questions}
 		}
 
 		else if ((cid >= 33 && cid <= 36) || cid == 31) {
-			var oncologyField = data.composerEl.find('#oncology-field').val();
+			var oncologyField = data.composerEl.find('#oncology-field').val() || "None";
 
 			data.composerData.formData = {
 				oncologyField: oncologyField
 			};
-
-			// data.composerData.message = '**New Treatment Modality**<br>' +
-			// 							'<br>**Tumor Type:** ' + oncologyField;
 
 			data.composerData.message = `## **New Treatment Modality**
 ---

@@ -517,7 +517,7 @@ define('composer', [
 		var postContainer = $('#cmp-uuid-' + post_uuid);
 		var handleEl = postContainer.find('.handle');
 		var titleEl = postContainer.find('.title');
-		var bodyEl = postContainer.find('textarea');
+		var bodyEl = postContainer.find('textarea') || "None";
 		var categoryEl = postContainer.find('.category-list');
 		var thumbEl = postContainer.find('input#topic-thumb-url');
 		var onComposeRoute = postData.hasOwnProperty('template') && postData.template.compose === true;
