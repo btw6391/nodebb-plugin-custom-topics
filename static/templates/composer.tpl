@@ -25,7 +25,8 @@
 			<div class="col-lg-12 col-md-12">
 				<!-- IF isTopicOrMain -->
 				<!-- IF isEditing -->
-				<input class="title form-control" type="text" tabindex="1" placeholder="[[topic:composer.title_placeholder]]" value="{title}"/>
+				<label>Post Title</label>
+				<input class="title form-control edit" type="text" tabindex="1" placeholder="[[topic:composer.title_placeholder]]" value="{title}"/>
 				<!-- ENDIF isEditing -->
 				<!-- ELSE -->
 				<span class="title form-control">[[topic:composer.replying_to, "{title}"]]</span>
@@ -35,7 +36,8 @@
 			<div class="col-lg-12 col-md-12">
 				<!-- IF isTopicOrMain -->
 				<!-- IF isEditing -->
-				<input class="title form-control" type="text" tabindex="1" placeholder="[[topic:composer.title_placeholder]]" value="{title}"/>
+				<label>Post Title</label>
+				<input class="title form-control edit" type="text" tabindex="1" placeholder="[[topic:composer.title_placeholder]]" value="{title}"/>
 				<!-- ENDIF isEditing -->
 				<!-- ELSE -->
 				<span class="title form-control">[[topic:composer.replying_to, "{title}"]]</span>
