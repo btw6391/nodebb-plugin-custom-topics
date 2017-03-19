@@ -34,7 +34,7 @@ plugin.onTopicCreate = function(data, callback) {
         data.topic.formData = data.data.formData;
     }
 
-    var imageIndex = data.data.content.search("!\[");
+    var imageIndex = data.data.content.search(/!\[/);
 
     if (imageIndex != -1) {
         data.data.content = data.data.content.insert(imageIndex, `
