@@ -34,11 +34,27 @@ plugin.onTopicCreate = function(data, callback) {
         data.topic.formData = data.data.formData;
     }
 
+    var imageIndex = data.data.content.search("![");
+
+    if (imageIndex != -1) {
+        data.data.content = data.data.content.insert(imageIndex, `
+`);
+    }
+
     if (data.data.message) {
         data.data.content = data.data.message + data.data.content;
     }
 
     callback(null, data);
+};
+
+String.prototype.insert = function (index, string) {
+	if (index > 0) {
+		return this.substring(0, index) + string + this.substring(index, this.length);
+	}
+  	else {
+    	return string + this;
+  	}
 };
 
 function renderAdmin(req, res, next) {
