@@ -114,27 +114,12 @@
 				<div class="row">
 					<div class="col-md-6">
 						<label>Prior Lines of Therapy</label>
-						<div class="form-inline">
-							<label>
-								<input type="checkbox" id="prior-lines-0" value="0">
-								0
-							</label>
-							<label>
-								<input type="checkbox" id="prior-lines-1" value="1">
-								1
-							</label>
-							<label>
-								<input type="checkbox" id="prior-lines-2" value="2">
-								2
-							</label>
-							<label>
-								<input type="checkbox" id="prior-lines-3" value="3">
-								3
-							</label>
-							<label>
-								<input type="checkbox" id="prior-lines-4" value=">3">
-								&gt;3
-							</label>
+						<div class="form-inline checkboxes">
+							<label><input type="checkbox" id="prior-lines-0" value="0">0</label>
+							<label><input type="checkbox" id="prior-lines-1" value="1">1</label>
+							<label><input type="checkbox" id="prior-lines-2" value="2">2</label>
+							<label><input type="checkbox" id="prior-lines-3" value="3">3</label>
+							<label><input type="checkbox" id="prior-lines-4" value=">3">&gt;3</label>
 						</div>
 					</div>
 					<div class="col-md-6">
