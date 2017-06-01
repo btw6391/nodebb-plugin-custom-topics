@@ -57,7 +57,7 @@
 		   		<div class="row">
 		   			<div class="col-md-6">
 			   			<label>Post Title</label>
-						<input class="title form-control" type="text" tabindex="1" placeholder="Brief Title Description" value="{title}"/>
+						<input class="title form-control" type="text" tabindex="1" placeholder="Provide stage and tumor histology" value="{title}"/>
 			   		</div>
 			   		<div class="col-md-6"">
 			   			<label>Tumor Type</label>
@@ -70,7 +70,7 @@
 				<div class="row">
 					<div class="col-md-6">
 						<label>Age</label>
-					  	<input type="text" id="age" name="age" class="form-control" placeholder="Patient's Age">
+					  	<input type="text" id="age" name="age" class="form-control" placeholder="Patient's age">
 					</div>
 			   		<div class="col-md-6">
 						<label>Sex</label>
