@@ -61,7 +61,8 @@
 			   		</div>
 			   		<div class="col-md-6"">
 			   			<label>Tumor Type</label>
-			   			<div class="category-list-container">
+			   			<div class="category-list-container col-lg-3 col-md-12 hidden-sm hidden-xs">
+
 						</div>
 			   		</div>
 			   	</div>
@@ -167,7 +168,8 @@
 				   	</div>
 				   	<div class="col-md-4">
 			   			<label>Modality</label>
-			   			<div class="category-list-container">
+			   			<div class="category-list-container col-lg-3 col-md-12 hidden-sm hidden-xs">
+
 						</div>
 			   		</div>
 				</div>
@@ -184,7 +186,8 @@
 			   		</div>
 			   		<div class="col-md-6">
 			   			<label>Category</label>
-			   			<div class="category-list-container">
+			   			<div class="category-list-container col-lg-3 col-md-12 hidden-sm hidden-xs">
+
 						</div>
 			   		</div>
 			   	</div>

@@ -129,7 +129,6 @@ define('composer/categoryList', ['categorySelector'], function(categorySelector)
 				category.level = level;
 				category.text = level + bullet + category.name;
 				categoriesData.push(category);
-				$('<li data-cid="' + category.cid + '">' + category.name + '</li>').appendTo($('.category-selector'));
 			}
 		}
 
@@ -139,7 +138,6 @@ define('composer/categoryList', ['categorySelector'], function(categorySelector)
 				category.level = level;
 				category.text = level + bullet + category.name;
 				categoriesData.push(category);
-				$('<li data-cid="' + category.cid + '">' + category.name + '</li>').appendTo($('.category-selector'));
 			}
 		}
 
@@ -149,14 +147,11 @@ define('composer/categoryList', ['categorySelector'], function(categorySelector)
 				category.level = level;
 				category.text = level + bullet + category.name;
 				categoriesData.push(category);
-				$('<li data-cid="' + category.cid + '">' + category.name + '</li>').appendTo($('.category-selector'));
 			}
 		}
 
-		category.children.sort(function(a, b) {
-			return a.order - b.order;
-		}).forEach(function(child) {
-			recursive(child, categoriesData, '&nbsp;&nbsp;' + level, cid);
+		category.children.forEach(function (child) {
+			recursive(child, categoriesData, '&nbsp;&nbsp;&nbsp;&nbsp;' + level, cid);
 		});
 	}
 
