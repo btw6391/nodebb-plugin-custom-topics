@@ -121,12 +121,15 @@ define('composer/categoryList', ['categorySelector'], function(categorySelector)
 
 		var bullet = level ? '&bull; ' : '';
 
+		console.log(cid);
+
 		if (cid >= 19 && cid <= 30) {
 			if (category.cid >= 19 && category.cid <= 30) {
 				category.value = category.cid;
 				category.level = level;
 				category.text = level + bullet + category.name;
 				categoriesData.push(category);
+				$('<li data-cid="' + category.cid + '">' + category.name + '</li>').appendTo($('.category-selector'));
 			}
 		}
 
@@ -136,6 +139,7 @@ define('composer/categoryList', ['categorySelector'], function(categorySelector)
 				category.level = level;
 				category.text = level + bullet + category.name;
 				categoriesData.push(category);
+				$('<li data-cid="' + category.cid + '">' + category.name + '</li>').appendTo($('.category-selector'));
 			}
 		}
 
