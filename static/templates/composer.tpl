@@ -62,7 +62,6 @@
 			   		<div class="col-md-6"">
 			   			<label>Tumor Type</label>
 			   			<div class="category-list-container">
-							<select id="category" name="category" class="category-list form-control select select-primary"></select>
 						</div>
 			   		</div>
 			   	</div>
@@ -169,7 +168,6 @@
 				   	<div class="col-md-4">
 			   			<label>Modality</label>
 			   			<div class="category-list-container">
-							<select id="category" name="category" class="category-list form-control select select-primary"></select>
 						</div>
 			   		</div>
 				</div>
@@ -187,7 +185,6 @@
 			   		<div class="col-md-6">
 			   			<label>Category</label>
 			   			<div class="category-list-container">
-							<select id="category" name="category" class="category-list form-control select select-primary"></select>
 						</div>
 			   		</div>
 			   	</div>
