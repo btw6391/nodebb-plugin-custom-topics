@@ -58,7 +58,7 @@ define('composer/categoryList', ['categorySelector'], function(categorySelector)
 				recursive(category, categoriesData, '', postData.cid);
 			});
 
-			app.parseAndTranslate('nodebb-plugin-custom-topics/static/templates/category-selector', {
+			app.parseAndTranslate('partials/category-selector', {
 				categories: categoriesData,
 				pullRight: true
 			}, function (html) {
