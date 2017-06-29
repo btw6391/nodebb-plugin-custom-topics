@@ -63,6 +63,9 @@ define('composer/categoryList', ['categorySelector'], function(categorySelector)
 				pullRight: true
 			}, function (html) {
 				listContainer.append(html);
+				
+				console.log(listContainer);
+				
 				categorySelector.init(listContainer.find('[component="category-selector"]'), function (selectedCategory) {
 					if (postData.hasOwnProperty('cid')) {
 						changeCategory(postContainer, postData, selectedCategory.cid);
@@ -120,8 +123,6 @@ define('composer/categoryList', ['categorySelector'], function(categorySelector)
 		}
 
 		var bullet = level ? '&bull; ' : '';
-
-		console.log(cid);
 
 		if (cid >= 19 && cid <= 30) {
 			if (category.cid >= 19 && category.cid <= 30) {
