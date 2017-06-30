@@ -171,6 +171,8 @@ define('categorySelector', function () {
 	var selectedCategory;
 	var el;
 	categorySelector.init = function (_el, callback) {
+		console.log("Initializing selector...");
+
 		callback = callback || function () {};
 		el = _el;
 		selectedCategory = null;
@@ -179,6 +181,8 @@ define('categorySelector', function () {
 			categorySelector.selectCategory(categoryEl.attr('data-cid'));
 			callback(selectedCategory);
 		});
+
+		console.log("Intialized selector.");
 	};
 
 	categorySelector.getSelectedCategory = function () {
