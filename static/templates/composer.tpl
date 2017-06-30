@@ -59,8 +59,8 @@
 			   			<label>Post Title</label>
 						<input class="title form-control" type="text" tabindex="1" placeholder="Provide stage and tumor histology" value="{title}"/>
 			   		</div>
+			   		<label>Tumor Type</label>
 			   		<div class="col-md-6"">
-			   			<label>Tumor Type</label>
 			   			<div class="category-list-container col-lg-3 col-md-12 hidden-sm hidden-xs">
 
 						</div>
@@ -166,8 +166,8 @@
 							<option value="Pediatric Oncology">Pediatric Oncology</option>
 						</select>
 				   	</div>
+				   	<label>Modality</label>
 				   	<div class="col-md-4">
-			   			<label>Modality</label>
 			   			<div class="category-list-container col-lg-3 col-md-12 hidden-sm hidden-xs">
 
 						</div>
@@ -184,8 +184,8 @@
 			   			<label>Post Title</label>
 						<input class="title form-control" type="text" tabindex="1" placeholder="Brief Title Description" value="{title}"/>
 			   		</div>
+			   		<label>Category</label>
 			   		<div class="col-md-6">
-			   			<label>Category</label>
 			   			<div class="category-list-container col-lg-3 col-md-12 hidden-sm hidden-xs">
 
 						</div>
