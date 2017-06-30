@@ -65,10 +65,8 @@ define('composer/categoryList', ['categorySelector'], function(categorySelector)
 				listContainer.append(html);
 
 				var found = listContainer.find('[component="category-selector"]');
-
-				console.log(found);
 				
-				categorySelector.init(listContainer.find('[component="category-selector"]'), function (selectedCategory) {
+				categorySelector.init(found, function (selectedCategory) {
 					if (postData.hasOwnProperty('cid')) {
 						console.log("Has CID property!");
 						changeCategory(postContainer, postData, selectedCategory.cid);
@@ -166,4 +164,35 @@ define('composer/categoryList', ['categorySelector'], function(categorySelector)
 	}
 
 	return categoryList;
+});
+
+define('categorySelector', function () {
+	var categorySelector = {};
+	var selectedCategory;
+	var el;
+	categorySelector.init = function (_el, callback) {
+		callback = callback || function () {};
+		el = _el;
+		selectedCategory = null;
+		el.on('click', '[data-cid]', function () {
+			var categoryEl = $(this);
+			categorySelector.selectCategory(categoryEl.attr('data-cid'));
+			callback(selectedCategory);
+		});
+	};
+
+	categorySelector.getSelectedCategory = function () {
+		return selectedCategory;
+	};
+
+	categorySelector.selectCategory = function (cid) {
+		var categoryEl = el.find('[data-cid="' + cid + '"]');
+		selectedCategory = {
+			cid: cid,
+			name: categoryEl.attr('data-name'),
+		};
+		el.find('[component="category-selector-selected"]').html(categoryEl.find('[component="category-markup"]').html());
+	};
+
+	return categorySelector;
 });
