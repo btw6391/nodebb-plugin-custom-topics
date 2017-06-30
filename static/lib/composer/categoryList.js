@@ -63,9 +63,11 @@ define('composer/categoryList', ['categorySelector'], function(categorySelector)
 				pullRight: true
 			}, function (html) {
 				listContainer.append(html);
-				
-				console.log(listContainer);
 
+				var found = listContainer.find('[component="category-selector"]');
+
+				console.log(found);
+				
 				categorySelector.init(listContainer.find('[component="category-selector"]'), function (selectedCategory) {
 					if (postData.hasOwnProperty('cid')) {
 						console.log("Has CID property!");
