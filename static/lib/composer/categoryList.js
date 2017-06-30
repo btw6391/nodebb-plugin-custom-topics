@@ -65,13 +65,16 @@ define('composer/categoryList', ['categorySelector'], function(categorySelector)
 				listContainer.append(html);
 				
 				console.log(listContainer);
-				
+
 				categorySelector.init(listContainer.find('[component="category-selector"]'), function (selectedCategory) {
 					if (postData.hasOwnProperty('cid')) {
+						console.log("Has CID property!");
 						changeCategory(postContainer, postData, selectedCategory.cid);
 					}
 
 					$('[tabindex=' + (parseInt($(this).attr('tabindex'), 10) + 1) + ']').trigger('focus');
+
+					console.log("Working!");
 				});
 
 				if (postData.cid) {
@@ -111,10 +114,14 @@ define('composer/categoryList', ['categorySelector'], function(categorySelector)
 	};
 
 	function changeCategory(postContainer, postData, cid) {
+		console.log("Changed to:" + cid);
+
 		postData.cid = cid;
 		require(['composer/tags'], function (tags) {
 			tags.onChangeCategory(postContainer, postData, cid);
 		});
+
+		console.log("Category changed.");
 	}
 
 	function recursive(category, categoriesData, level, cid) {
