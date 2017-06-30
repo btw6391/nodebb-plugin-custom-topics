@@ -60,7 +60,7 @@ define('composer/categoryList', ['categorySelector'], function(categorySelector)
 
 			app.parseAndTranslate('partials/category-selector', {
 				categories: categoriesData,
-				pullRight: true
+				pullRight: false
 			}, function (html) {
 				listContainer.append(html);
 
