@@ -114,7 +114,7 @@ define('composer/categoryList', ['categorySelector'], function(categorySelector)
 	};
 
 	function changeCategory(postContainer, postData, cid) {
-		console.log("Changed to:" + cid);
+		console.log(cid);
 
 		postData.cid = cid;
 		require(['composer/tags'], function (tags) {
