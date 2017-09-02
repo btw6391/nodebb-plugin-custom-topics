@@ -68,13 +68,10 @@ define('composer/categoryList', ['categorySelector'], function(categorySelector)
 				
 				categorySelector.init(found, function (selectedCategory) {
 					if (postData.hasOwnProperty('cid')) {
-						console.log("Has CID property!");
 						changeCategory(postContainer, postData, selectedCategory.cid);
 					}
 
 					$('[tabindex=' + (parseInt($(this).attr('tabindex'), 10) + 1) + ']').trigger('focus');
-
-					console.log("Working!");
 				});
 
 				if (postData.cid) {
@@ -114,14 +111,10 @@ define('composer/categoryList', ['categorySelector'], function(categorySelector)
 	};
 
 	function changeCategory(postContainer, postData, cid) {
-		console.log(cid);
-
 		postData.cid = cid;
 		require(['composer/tags'], function (tags) {
 			tags.onChangeCategory(postContainer, postData, cid);
 		});
-
-		console.log("Category changed.");
 	}
 
 	function recursive(category, categoriesData, level, cid) {
@@ -149,8 +142,17 @@ define('composer/categoryList', ['categorySelector'], function(categorySelector)
 			}
 		}
 
+		else if (cid == 37) {
+			if (category.cid == 37) {
+				category.value = category.cid;
+				category.level = level;
+				category.text = level + bullet + category.name;
+				categoriesData.push(category);
+			}
+		}
+
 		else {
-			if (!(category.cid >= 19 && category.cid <= 31) && !(category.cid >= 33 && category.cid <= 36)) {
+			if (!(category.cid >= 19 && category.cid <= 31) && !(category.cid >= 33 && category.cid <= 37)) {
 				category.value = category.cid;
 				category.level = level;
 				category.text = level + bullet + category.name;
@@ -171,8 +173,6 @@ define('categorySelector', function () {
 	var selectedCategory;
 	var el;
 	categorySelector.init = function (_el, callback) {
-		console.log("Initializing selector...");
-
 		callback = callback || function () {};
 		el = _el;
 		selectedCategory = null;
@@ -181,8 +181,6 @@ define('categorySelector', function () {
 			categorySelector.selectCategory(categoryEl.attr('data-cid'));
 			callback(selectedCategory);
 		});
-
-		console.log("Intialized selector.");
 	};
 
 	categorySelector.getSelectedCategory = function () {

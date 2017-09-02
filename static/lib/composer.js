@@ -670,7 +670,7 @@ define('composer', [
 			isNewTreatment = true;
 		}
 
-		else if (postData.cid >= 37) {
+		else if (postData.cid == 37) {
 			isClincalTrial = true;
 		}
 

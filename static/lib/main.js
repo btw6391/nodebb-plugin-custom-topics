@@ -65,7 +65,7 @@ ${questions}
 												
 		}
 
-		else if (cid >= 37) {
+		else if (cid == 37) {
 			var oncologyField = data.composerEl.find('#oncology-field').val() || "None";
 			var studyType = data.composerEl.find('#study-type').val() || "None";
 			var location = data.composerEl.find('#location').val() || "None";
