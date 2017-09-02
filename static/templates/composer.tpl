@@ -251,7 +251,7 @@
 			   		</div>
 			   	</div>
 			</form>
-			<!-- ENDIF isClinical Trial -->
+			<!-- ENDIF isClinicalTrial -->
 
 			<!-- IF isGeneral -->
 			<h4 style="text-align: center; padding-bottom: 15px; font-weight: 700">Post a New Topic</h4>
