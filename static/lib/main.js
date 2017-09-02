@@ -65,6 +65,62 @@ ${questions}
 												
 		}
 
+		else if (cid >= 37) {
+			var oncologyField = data.composerEl.find('#oncology-field').val() || "None";
+			var studyType = data.composerEl.find('#study-type').val() || "None";
+			var location = data.composerEl.find('#location').val() || "None";
+			var sponsor = data.composerEl.find('#sponsor').val() || "None";
+
+			var inclusionCriteria, inclusionArray = data.composerEl.find('#inclusion-criteria').val().split(',');
+			var exclusionCriteria, exclusionArray = data.composerEl.find('#exclusion-criteria').val().split(',');
+
+			if (inclusionArray.length == 0) {
+			    inclusionCriteria = "None";
+			}
+
+			else {
+			    for (criteria in inclusionArray) {
+			    	inclusionCriteria += "*" + criteria + "  ";
+			    }
+			}
+
+			if (exclusionArray.length == 0) {
+			    exclusionCriteria = "None";
+			}
+
+			else {
+			    for (criteria in exclusionArray) {
+			    	exclusionCriteria += "*" + criteria + "  ";
+			    }
+			}
+
+			var phase = data.composerEl.find('#phase').val() || "None";
+			var contactInfo = data.composerEl.find('#contact-info').val() || "None";
+
+			data.composerData.formData = {
+				oncologyField: oncologyField,
+				studyType: studyType,
+				location: location,
+				sponsor: sponsor,
+				inclusionCriteria: inclusionCriteria,
+				exclusionCriteria: exclusionCriteria,
+				phase: phase,
+				contactInfo: contactInfo
+			};
+
+			data.composerData.message = `## **New Clinical Trial**
+---
+**Tumor Type:** ${oncologyField}
+**Study Type:** ${studyType}
+**Location(s):** ${location}
+**Sponsor:** ${sponsor}
+**Inclusion Criteria:** ${inclusionCriteria}
+**Exclusion Criteria:** ${exclusionCriteria}
+**Phase:** ${phase}
+**Contact Information:** ${contactInfo}
+**Additional Information:** `;
+		}
+
 		else if ((cid >= 33 && cid <= 36) || cid == 31) {
 			var oncologyField = data.composerEl.find('#oncology-field').val() || "None";
 

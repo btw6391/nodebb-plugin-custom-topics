@@ -392,6 +392,7 @@ define('composer', [
 			tagWhitelist: ajaxify.data.tagWhitelist,
 			isPatientCase: categoryType.isPatientCase,
 			isNewTreatment: categoryType.isNewTreatment,
+			isClincalTrial: categoryType.isClincalTrial,
 			isGeneral: categoryType.isGeneral
 		};
 
@@ -658,6 +659,7 @@ define('composer', [
 
 		var isPatientCase = false,
 			isNewTreatment = false,
+			isClincalTrial = false,
 			isGeneral = false;
 
 		if (postData.cid >= 19 && postData.cid <= 30) {
@@ -668,12 +670,17 @@ define('composer', [
 			isNewTreatment = true;
 		}
 
+		else if (postData.cid >= 37) {
+			isClincalTrial = true;
+		}
+
 		else {
 			isGeneral = true;
 		}
 
 		var categoryType = {isPatientCase: isPatientCase,
 							isNewTreatment: isNewTreatment,
+							isClincalTrial: isClincalTrial,
 							isGeneral: isGeneral
 		};
 
