@@ -83,8 +83,8 @@ ${questions}
 			}
 
 			else {
-			    for (criteria in inclusionArray) {
-			    	inclusionCriteria += "- " + inclusionArray[criteria].trim().capitalize() + `
+			    for (i = 1; i < inclusionArray.length; i++) {
+			    	inclusionCriteria += "- " + inclusionArray[i].trim().capitalize() + `
 `;
 			    }
 			}
@@ -94,8 +94,8 @@ ${questions}
 			}
 
 			else {
-			    for (criteria in exclusionArray) {
-			    	exclusionCriteria += "- " + exclusionArray[criteria].trim().capitalize() + `
+			    for (i = 1; i < exclusionArray.length; i++) {
+			    	exclusionCriteria += "- " + exclusionArray[i].trim().capitalize() + `
 `;
 			    }
 			}
@@ -120,8 +120,10 @@ ${questions}
 **Study Type:** ${studyType}
 **Location(s):** ${location}
 **Sponsor:** ${sponsor}
-**Inclusion Criteria:** ${inclusionCriteria}
-**Exclusion Criteria:** ${exclusionCriteria}
+**Inclusion Criteria:**
+${inclusionCriteria}
+**Exclusion Criteria:**
+${exclusionCriteria}
 **Phase:** ${phase}
 **Contact Information:** ${contactInfo}
 **Additional Information:** `;
