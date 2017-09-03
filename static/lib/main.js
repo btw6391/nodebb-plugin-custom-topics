@@ -71,8 +71,8 @@ ${questions}
 			var location = data.composerEl.find('#location').val() || "None";
 			var sponsor = data.composerEl.find('#sponsor').val() || "None";
 
-			var inclusionCriteria, inclusionArray = data.composerEl.find('#inclusion-criteria').val().split(',');
-			var exclusionCriteria, exclusionArray = data.composerEl.find('#exclusion-criteria').val().split(',');
+			var inclusionCriteria, inclusionArray = data.composerEl.find('#inclusion-criteria').val().trim().split(',');
+			var exclusionCriteria, exclusionArray = data.composerEl.find('#exclusion-criteria').val().trim().split(',');
 
 			if (inclusionArray.length == 0) {
 			    inclusionCriteria = "None";
@@ -80,7 +80,7 @@ ${questions}
 
 			else {
 			    for (criteria in inclusionArray) {
-			    	inclusionCriteria += "*" + inclusionArray[criteria] + `<br />`;
+			    	inclusionCriteria += "* " + inclusionArray[criteria].trim() + "<br />";
 			    }
 			}
 
@@ -90,7 +90,7 @@ ${questions}
 
 			else {
 			    for (criteria in exclusionArray) {
-			    	exclusionCriteria += "*" + exclusionArray[criteria] + `<br />`;
+			    	exclusionCriteria += "* " + exclusionArray[criteria].trim() + "<br />";
 			    }
 			}
 
