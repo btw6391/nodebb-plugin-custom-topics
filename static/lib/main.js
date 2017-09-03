@@ -75,16 +75,18 @@ ${questions}
 			var location = data.composerEl.find('#location').val() || "None";
 			var sponsor = data.composerEl.find('#sponsor').val() || "None";
 
-			var inclusionCriteria, inclusionArray = String(data.composerEl.find('#inclusion-criteria').val()).split(',');
-			var exclusionCriteria, exclusionArray = String(data.composerEl.find('#exclusion-criteria').val()).split(',');
+			var inclusionCriteria = "";
+			var exclusionCriteria = "";
+			var inclusionArray = data.composerEl.find('#inclusion-criteria').val().split(',');
+			var exclusionArray = data.composerEl.find('#exclusion-criteria').val().split(',');
 
 			if (inclusionArray.length == 0) {
 			    inclusionCriteria = "None";
 			}
 
 			else {
-			    for (i = 1; i < inclusionArray.length; i++) {
-			    	inclusionCriteria += "- " + inclusionArray[i].trim().capitalize() + `
+			    for (criteria in inclusionArray) {
+			    	inclusionCriteria += "- " + inclusionArray[criteria].trim().capitalize() + `
 `;
 			    }
 			}
@@ -94,8 +96,8 @@ ${questions}
 			}
 
 			else {
-			    for (i = 1; i < exclusionArray.length; i++) {
-			    	exclusionCriteria += "- " + exclusionArray[i].trim().capitalize() + `
+			    for (criteria in exclusionArray) {
+			    	exclusionCriteria += "- " + exclusionArray[criteria].trim().capitalize() + `
 `;
 			    }
 			}
