@@ -180,6 +180,9 @@
 			<h4 style="text-align: center; padding-bottom: 15px; font-weight: 700">Post a New Clinical Trial</h4>
 			<form>
 				<div class="row">
+					<div class="category-list-container" style="display:none;">
+
+					</div>
 		   			<div class="col-md-6">
 			   			<label>Post Title</label>
 						<input class="title form-control" type="text" tabindex="1" placeholder="Brief Title Description" value="{title}"/>
