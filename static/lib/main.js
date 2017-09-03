@@ -80,7 +80,7 @@ ${questions}
 
 			else {
 			    for (criteria in inclusionArray) {
-			    	inclusionCriteria += "*" + criteria + "  ";
+			    	inclusionCriteria += "*" + inclusionArray[criteria] + `<br />`;
 			    }
 			}
 
@@ -90,7 +90,7 @@ ${questions}
 
 			else {
 			    for (criteria in exclusionArray) {
-			    	exclusionCriteria += "*" + criteria + "  ";
+			    	exclusionCriteria += "*" + exclusionArray[criteria] + `<br />`;
 			    }
 			}
 
