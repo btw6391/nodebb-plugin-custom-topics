@@ -1,6 +1,10 @@
 'use strict';
 /*global utils, app*/
 
+String.prototype.capitalize = function() {
+    return this.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
+};
+
 $(window).on('action:composer.submit', function(ev, data) {
     // data.composerEl is the dom element for the composer
     // data.action can be `topics.post`, `posts.reply` or `posts.edit`
@@ -71,8 +75,8 @@ ${questions}
 			var location = data.composerEl.find('#location').val() || "None";
 			var sponsor = data.composerEl.find('#sponsor').val() || "None";
 
-			var inclusionCriteria, inclusionArray = data.composerEl.find('#inclusion-criteria').val().trim().split(',');
-			var exclusionCriteria, exclusionArray = data.composerEl.find('#exclusion-criteria').val().trim().split(',');
+			var inclusionCriteria, inclusionArray = String(data.composerEl.find('#inclusion-criteria').val()).split(',');
+			var exclusionCriteria, exclusionArray = String(data.composerEl.find('#exclusion-criteria').val()).split(',');
 
 			if (inclusionArray.length == 0) {
 			    inclusionCriteria = "None";
@@ -80,7 +84,8 @@ ${questions}
 
 			else {
 			    for (criteria in inclusionArray) {
-			    	inclusionCriteria += "* " + inclusionArray[criteria].trim() + "<br />";
+			    	inclusionCriteria += "- " + inclusionArray[criteria].trim().capitalize() + `
+`;
 			    }
 			}
 
@@ -90,7 +95,8 @@ ${questions}
 
 			else {
 			    for (criteria in exclusionArray) {
-			    	exclusionCriteria += "* " + exclusionArray[criteria].trim() + "<br />";
+			    	exclusionCriteria += "- " + exclusionArray[criteria].trim().capitalize() + `
+`;
 			    }
 			}
 
