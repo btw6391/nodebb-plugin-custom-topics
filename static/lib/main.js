@@ -80,7 +80,7 @@ ${questions}
 			var inclusionArray = data.composerEl.find('#inclusion-criteria').val().split(',');
 			var exclusionArray = data.composerEl.find('#exclusion-criteria').val().split(',');
 
-			if (inclusionArray.length == 0) {
+			if (inclusionArray.length <= 1) {
 			    inclusionCriteria = "None";
 			}
 
@@ -91,7 +91,7 @@ ${questions}
 			    }
 			}
 
-			if (exclusionArray.length == 0) {
+			if (exclusionArray.length <= 1) {
 			    exclusionCriteria = "None";
 			}
 
