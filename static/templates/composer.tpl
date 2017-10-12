@@ -300,20 +300,20 @@
 						<ul class="formatting-group">
 							<!-- BEGIN formatting -->
 								<!-- IF formatting.spacer -->
-								<li class="spacer"></li>
+								<!-- <li class="spacer"></li> -->
 								<!-- ELSE -->
 								<!-- IF !formatting.mobile -->
-								<li tabindex="-1" data-format="{formatting.name}" title="{formatting.title}"><i class="{formatting.className}"></i></li>
+								<!-- <li tabindex="-1" data-format="{formatting.name}" title="{formatting.title}"><i class="{formatting.className}"></i></li> -->
 								<!-- ENDIF !formatting.mobile -->
 								<!-- ENDIF formatting.spacer -->
 							<!-- END formatting -->
 
 							<!--[if gte IE 9]><!-->
 								<li class="img-upload-btn hide" data-format="picture" tabindex="-1" title="[[modules:composer.upload-picture]]">
-									<i class="fa fa-cloud-upload"></i>
+									<i class="fa fa-picture-o"></i>&nbsp; Upload Image
 								</li>
 								<li class="file-upload-btn hide" data-format="upload" tabindex="-1" title="[[modules:composer.upload-file]]">
-									<i class="fa fa-upload"></i>
+									<i class="fa fa-file-o"></i>&nbsp; Upload File
 								</li>
 							<!--<![endif]-->
 
