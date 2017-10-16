@@ -322,7 +322,7 @@
 					</div>
 			   		<div class="col-md-4">
 					  	<label>Location(s)</label>
-					   	<input type="text" id="locations" name="locations" class="form-control" placeholder="List the location(s) this trial will be held"> 
+					   	<input type="text" id="location" name="location" class="form-control" placeholder="List the location(s) this trial will be held"> 
 					</div>
 			   		<div class="col-md-4"">
 			   			<label>Contact Information</label>

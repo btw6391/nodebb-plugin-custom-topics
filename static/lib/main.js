@@ -77,8 +77,8 @@ ${questions}
 
 			var inclusionCriteria = "";
 			var exclusionCriteria = "";
-			var inclusionArray = data.composerEl.find('#inclusion-criteria').val().split(',');
-			var exclusionArray = data.composerEl.find('#exclusion-criteria').val().split(',');
+			var inclusionArray = data.composerEl.find('#inclusion-criteria').val().split("\\p{IsAlphabetic}+");
+			var exclusionArray = data.composerEl.find('#exclusion-criteria').val().split("\\p{IsAlphabetic}+");
 
 			if (inclusionArray.length <= 1) {
 			    inclusionCriteria = "None";
