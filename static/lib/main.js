@@ -120,13 +120,13 @@ ${questions}
 ---
 **Tumor Type:** ${oncologyField}
 **Study Type:** ${studyType}
-**Location(s):** ${location}
-**Sponsor:** ${sponsor}
+**Phase:** ${phase}
 **Inclusion Criteria:**
 ${inclusionCriteria}
 **Exclusion Criteria:**
 ${exclusionCriteria}
-**Phase:** ${phase}
+**Sponsor:** ${sponsor}
+**Location(s):** ${location}
 **Contact Information:** ${contactInfo}
 **Additional Information:** `;
 		}
