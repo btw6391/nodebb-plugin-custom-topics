@@ -249,6 +249,7 @@
 					   	<input type="text" id="location" name="location" class="form-control" placeholder="List the location(s) this trial will be held"> 
 					</div>
 				</div>
+
 				<div class="row">
 			   		<div class="col-md-6"">
 			   			<label>Contact Information</label>
@@ -256,7 +257,7 @@
 			   		</div>
 			   		<div class="col-md-6"">
 			   			<label>Link</label>
-			   			<input type="text" id="link" name="Link" class="form-control" placeholder="Website link"> 
+			   			<input type="text" id="link" name="link" class="form-control" placeholder="Website link"> 
 			   		</div>
 			   	</div>
 			</form>

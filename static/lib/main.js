@@ -130,7 +130,7 @@ ${exclusionCriteria}
 **Sponsor:** ${sponsor}
 **Location(s):** ${location}
 **Contact Information:** ${contactInfo}
-**Link** ${link}
+**Link:** ${link}
 **Additional Information:** `;
 		}
 
