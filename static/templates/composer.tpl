@@ -240,17 +240,23 @@
 			   	</div>
 
 			   	<div class="row">
-			   		<div class="col-md-4">
+			   		<div class="col-md-6">
 					  	<label>Sponsor</label>
 					   	<input type="text" id="sponsor" name="sponsor" class="form-control" placeholder="Describe the sponsor"> 
 					</div>
-			   		<div class="col-md-4">
+			   		<div class="col-md-6">
 					  	<label>Location(s)</label>
 					   	<input type="text" id="location" name="location" class="form-control" placeholder="List the location(s) this trial will be held"> 
 					</div>
-			   		<div class="col-md-4"">
+				</div>
+				<div class="row">
+			   		<div class="col-md-6"">
 			   			<label>Contact Information</label>
-			   			<input type="text" id="contact-info" name="contact-info" class="form-control" placeholder="Email address, website, etc."> 
+			   			<input type="text" id="contact-info" name="contact-info" class="form-control" placeholder="Email address, phone number, etc."> 
+			   		</div>
+			   		<div class="col-md-6"">
+			   			<label>Link</label>
+			   			<input type="text" id="link" name="Link" class="form-control" placeholder="Website link"> 
 			   		</div>
 			   	</div>
 			</form>

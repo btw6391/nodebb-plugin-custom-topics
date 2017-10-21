@@ -104,6 +104,7 @@ ${questions}
 
 			var phase = data.composerEl.find('#phase').val() || "None";
 			var contactInfo = data.composerEl.find('#contact-info').val() || "None";
+			var link = data.composerEl.find('#link').val() || "None";
 
 			data.composerData.formData = {
 				oncologyField: oncologyField,
@@ -113,7 +114,8 @@ ${questions}
 				inclusionCriteria: inclusionCriteria,
 				exclusionCriteria: exclusionCriteria,
 				phase: phase,
-				contactInfo: contactInfo
+				contactInfo: contactInfo,
+				link: link
 			};
 
 			data.composerData.message = `## **New Clinical Trial**
@@ -128,6 +130,7 @@ ${exclusionCriteria}
 **Sponsor:** ${sponsor}
 **Location(s):** ${location}
 **Contact Information:** ${contactInfo}
+**Link** ${link}
 **Additional Information:** `;
 		}
 
