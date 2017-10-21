@@ -59,7 +59,7 @@
 			   			<label>Post Title</label>
 						<input class="title form-control" type="text" tabindex="1" placeholder="Provide stage and tumor histology" value="{title}"/>
 			   		</div>
-			   		<div class="col-md-6"">
+			   		<div class="col-md-6">
 			   		<label>Tumor Type</label>
 			   			<div class="category-list-container">
 
@@ -107,7 +107,7 @@
 					</div>
 					<div class="col-md-6">
 						<label>Mutation Status</label>  
-						<input type="text" id="mutation-status"" name="mutation-status" class="form-control" placeholder="Describe mutation status">
+						<input type="text" id="mutation-status" name="mutation-status" class="form-control" placeholder="Describe mutation status">
 					</div>
 				</div>
 
@@ -177,7 +177,7 @@
 			<!-- ENDIF isNewTreatment -->
 
 			<!-- IF isClinicalTrial -->
-			<h4 style="text-align: center; padding-bottom: 15px; font-weight: 700">Post a New Clinical Trial</h4>
+<!-- 			<h4 style="text-align: center; padding-bottom: 15px; font-weight: 700">Post a New Clinical Trial</h4>
 			<form>
 				<div class="row">
 					<div class="category-list-container" style="display:none;">
@@ -216,7 +216,7 @@
 							<option value="Coorperative Group">Coorperative Group</option>
 						</select>
 			   		</div>
-			   		<div class="col-md-6"">
+			   		<div class="col-md-6">
 			   			<label>Phase</label>
 						<select id="phase" name="phase" class="form-control select select-primary">
 							<option value="">Select a phase</option>
@@ -251,15 +251,96 @@
 				</div>
 
 				<div class="row">
-			   		<div class="col-md-6"">
+			   		<div class="col-md-6">
 			   			<label>Contact Information</label>
 			   			<input type="text" id="contact-info" name="contact-info" class="form-control" placeholder="Email address, phone number, etc."> 
 			   		</div>
-			   		<div class="col-md-6"">
+			   		<div class="col-md-6">
 			   			<label>Link</label>
 			   			<input type="text" id="link" name="link" class="form-control" placeholder="Website link"> 
 			   		</div>
 			   	</div>
+			</form> -->
+			<!-- ENDIF isClinicalTrial -->
+
+			<!-- IF isClinicalTrial -->
+			<h4 style="text-align: center; padding-bottom: 15px; font-weight: 700">Post a New Clinical Trial</h4>
+			<form>
+				<div class="row">
+					<div class="category-list-container" style="display:none;">
+
+					</div>
+		   			<div class="col-md-3">
+			   			<label>Post Title</label>
+						<input class="title form-control" type="text" tabindex="1" placeholder="Brief Title Description" value="{title}"/>
+			   		</div>
+			   		<div class="col-md-3">
+			   			<label>Tumor Type</label>
+						<select id="oncology-field" name="oncology-field" class="form-control select select-primary">
+							<option value="">Select a field</option>
+					  		<option value="Breast Cancer">Breast Cancer</option>
+							<option value="Lung Cancer">Lung Cancer</option>
+							<option value="Sarcoma">Sarcoma</option>
+							<option value="Hematologic Malignancies">Hematologic Malignancies</option>
+							<option value="Neuro-oncology">Neuro-oncology</option>
+							<option value="Melanoma">Melanoma</option>
+							<option value="Gastrointestinal Cancer">Gastrointestinal Cancer</option>
+							<option value="Genitourinary Cancer">Genitourinary Cancer</option>
+							<option value="Gynecologic Cancer">Gynecologic Cancer</option>
+							<option value="Head and Neck Cancer">Head and Neck Cancer</option>
+							<option value="Pediatric Oncology">Pediatric Oncology</option>
+						</select>
+			   		</div>
+			   		<div class="col-md-3">
+			   			<label>Study Type</label>
+						<select id="study-type" name="study-type" class="form-control select select-primary">
+							<option value="">Select a field</option>
+					  		<option value="Company Sponsored">Company Sponsored</option>
+							<option value="Investigator Sponsored">Investigator Sponsored</option>
+							<option value="Coorperative Group">Coorperative Group</option>
+						</select>
+			   		</div>
+			   		<div class="col-md-3">
+			   			<label>Phase</label>
+						<select id="phase" name="phase" class="form-control select select-primary">
+							<option value="">Select a phase</option>
+					  		<option value="I">I</option>
+							<option value="I/II">I/II</option>
+							<option value="II">II</option>
+							<option value="III">III</option>
+						</select>
+			   		</div>
+			   	</div>
+
+			   	<div class="row">
+			   		<div class="col-md-6">
+					  	<label>Inclusion Criteria</label>
+					   	<input type="text" id="inclusion-criteria" name="inclusion-criteria" class="form-control" placeholder="List criteria, separated by commas"> 
+					</div>
+					<div class="col-md-6">
+					  	<label>Exclusion Criteria</label>
+					   	<input type="text" id="exclusion-criteria" name="exclusion-criteria" class="form-control" placeholder="List criteria, separated by commas"> 
+					</div>
+			   	</div>
+
+			   	<div class="row">
+			   		<div class="col-md-3">
+					  	<label>Sponsor</label>
+					   	<input type="text" id="sponsor" name="sponsor" class="form-control" placeholder="Describe the sponsor"> 
+					</div>
+			   		<div class="col-md-3">
+					  	<label>Location(s)</label>
+					   	<input type="text" id="location" name="location" class="form-control" placeholder="List the location(s) this trial will be held"> 
+					</div>
+					<div class="col-md-3">
+			   			<label>Contact Information</label>
+			   			<input type="text" id="contact-info" name="contact-info" class="form-control" placeholder="Email address, phone number, etc."> 
+			   		</div>
+			   		<div class="col-md-3">
+			   			<label>Link</label>
+			   			<input type="text" id="link" name="link" class="form-control" placeholder="Website link"> 
+			   		</div>
+				</div>
 			</form>
 			<!-- ENDIF isClinicalTrial -->
 
@@ -268,11 +349,11 @@
 			<form>
 				<div class="row">
 					<div class="col-md-6">
-			   			<label>Study Title</label>
+			   			<label>Topic Title</label>
 						<input class="title form-control" type="text" tabindex="1" placeholder="Brief Title Description" value="{title}"/>
 			   		</div>
 			   		<div class="col-md-6">
-			   		<label>Tumor Type</label>
+			   		<label>Category</label>
 			   			<div class="category-list-container">
 
 						</div>
